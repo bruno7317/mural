@@ -16,9 +16,9 @@ export class NewEntryComponent {
   ) {}
 
   new_entry: Entry = {
-    entry_text: "Lorem ipsum",
-    entry_author: "dolor",
-    entry_font: "georgia"
+    id: "",
+    message: "Lorem ipsum",
+    name: "dolor"
   }
 
   saveEntry()

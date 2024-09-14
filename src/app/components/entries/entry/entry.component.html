@@ -1,9 +1,5 @@
 <div>
-  <p>{{ entry.entry_text }}</p>
-  <p>{{ entry.entry_author }}</p>
-  <p>{{ entry.entry_font }}</p>
-  <div class="entry-buttons">
-    <button (click)="editEntry()" routerLink="/entries/updateEntry/{{ entry.id }}">Edit</button>
-    <button (click)="deleteEntry()" routerLink="/entries/removeEntry/{{ entry.id }}">Delete</button>
-  </div>
+  <p>{{ entry.message }}</p>
+  <p>{{ entry.name }}</p>
+  <p>{{ entry.id }}</p>
 </div>

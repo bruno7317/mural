@@ -4,25 +4,14 @@
     <form>
 
       <label for="entry-text">Entry:</label>
-      <input type="textarea" id="entry-text" name="entry-text" placeholder="What's on your mind?" [(ngModel)]="new_entry.entry_text">
+      <input type="textarea" id="entry-text" name="entry-text" placeholder="What's on your mind?" [(ngModel)]="new_entry.message">
 
       <label for="entry-author">Author:</label>
-      <input type="text" id="entry-author" name="entry-author" placeholder="Sign your words" [(ngModel)]="new_entry.entry_author">
-
-      <div>
-        Font:
-        <input type="radio" name="entry-font" id="helvetica" value="helvetica" [(ngModel)]="new_entry.entry_font">
-        <label for="helvetica" style="font-family: helvetica;">Helvetica</label>
-        <input type="radio" name="entry-font" id="georgia" value="georgia" [(ngModel)]="new_entry.entry_font">
-        <label for="georgia" style="font-family: georgia;">Georgia</label>
-        <input type="radio" name="entry-font" id="garamond" value="garamond" [(ngModel)]="new_entry.entry_font">
-        <label for="garamond" style="font-family: garamond;">Garamond</label>
-      </div>
+      <input type="text" id="entry-author" name="entry-author" placeholder="Sign your words" [(ngModel)]="new_entry.name">
 
       <p>Preview:</p>
-      <p>{{ new_entry.entry_text }}</p>
-      <p>{{ new_entry.entry_author }}</p>
-      <p>{{ new_entry.entry_font }}</p>
+      <p>{{ new_entry.message }}</p>
+      <p>{{ new_entry.name }}</p>
 
       <div>
         <button (click)="saveEntry()">Save</button>

@@ -10,10 +10,9 @@ export class EntryComponent {
 
   @Input()
   entry: Entry = {
-    id: 0,
-    entry_text: "",
-    entry_author: "",
-    entry_font: ""
+    id: "",
+    message: "",
+    name: ""
   }
 
   editEntry()

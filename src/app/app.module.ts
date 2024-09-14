@@ -10,8 +10,6 @@ import { ListEntriesComponent } from './components/entries/list-entries/list-ent
 import { FormsModule } from '@angular/forms';
 import { EntryComponent } from './components/entries/entry/entry.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RemoveEntryComponent } from './components/entries/remove-entry/remove-entry.component';
-import { UpdateEntryComponent } from './components/entries/update-entry/update-entry.component';
 import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
@@ -22,8 +20,6 @@ import { AboutComponent } from './components/about/about.component';
     NewEntryComponent,
     ListEntriesComponent,
     EntryComponent,
-    RemoveEntryComponent,
-    UpdateEntryComponent,
     AboutComponent,
   ],
   imports: [
