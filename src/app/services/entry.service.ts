@@ -1,14 +1,15 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Entry } from './entry/entry';
+import { Entry } from '../components/entries/entry/entry';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EntryService {
 
-  private readonly API = 'https://544bqkjis1.execute-api.us-west-2.amazonaws.com/guestbook';
+  private readonly API = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 

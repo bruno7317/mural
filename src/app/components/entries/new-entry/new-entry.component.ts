@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Entry } from '../entry/entry';
-import { EntryService } from '../entry.service';
+import { EntryService } from '../../../services/entry.service';
 import { Router } from '@angular/router';
 
 @Component({
