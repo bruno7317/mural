@@ -68,15 +68,4 @@ export class HomeComponent {
       description: 'A stock market tracker that monitors live stock prices, provides portfolio management, and tracks financial news.'
     }
   ];
-  slideConfig = {
-    slidesPerView: 5,
-    spaceBetween: 10,
-    navigation: true,
-    pagination: { clickable: true },
-    breakpoints: {
-      1024: { slidesPerView: 3 },
-      768: { slidesPerView: 2 },
-      480: { slidesPerView: 1 }
-    }
-  };
 }

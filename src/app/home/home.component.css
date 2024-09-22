@@ -1,110 +1,122 @@
+/* General Container */
 .home-container {
   padding: 20px;
+  overflow: hidden;
 }
 
+/* Projects Section */
 .projects-section {
   margin: 0 auto;
   padding: 20px;
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
 }
 
-.project-slide {
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.slick-prev:before, .slick-next:before {
-  color: #000;  /* Change the arrow color */
-}
-
-.slick-dots {
-  bottom: -30px; /* Position dots below the slider */
-}
-
-h1 {
-  font-size: 2em;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.scrollable-project-list {
+/* Scrollable Container for Cards */
+.scrollable-container {
   display: flex;
-  overflow-x: auto; /* Horizontal scrolling */
+  overflow-x: auto; /* Enable horizontal scrolling */
   gap: 20px;
-  padding: 20px;
-  scroll-snap-type: x mandatory; /* Smooth snapping for scrolling */
+  scroll-snap-type: x mandatory; /* Smooth scrolling */
+  padding: 20px 0;
 }
 
-.scrollable-project-list::-webkit-scrollbar {
-  display: none; /* Hide scrollbar */
+.scrollable-container::-webkit-scrollbar {
+  height: 12px; /* Set scrollbar height */
 }
 
+.scrollable-container::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scrollbar color */
+  border-radius: 6px; /* Rounded edges */
+}
+
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darken on hover */
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+}
+
+/* Project Card Styling */
+.project-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  min-width: 250px;
+  max-width: 300px;
+  flex: 0 0 auto;
+  transition: transform 0.3s ease-in-out;
+  scroll-snap-align: start;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Project Image */
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Project Information */
+.project-info {
+  padding: 15px;
+}
+
+.project-info h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.project-info p {
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* Guestbook Section */
 .guestbook-section {
   margin-top: 40px;
 }
 
-/* Mobile Layout (Single Row) */
-.scrollable-project-list {
-  display: flex;
-  overflow-x: auto; /* Horizontal scrolling */
-  gap: 10px;
-  padding: 10px;
-}
+/* Media Queries */
 
-.project-card {
-  min-width: 200px; /* Ensure a consistent width for scrolling */
-  max-width: 200px;
-  margin: 10px;
-  padding: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  transition: transform 0.2s ease-in-out;
-}
-
-.project-card img {
-  max-width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.project-card h2 {
-  font-size: 1.1em;
-  margin: 10px 0 5px;
-}
-
-.project-card p {
-  font-size: 0.9em;
-  color: #666;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* Hover effect */
-.project-card:hover {
-  transform: scale(1.05);
-}
-
-/* Desktop Layout (Multiple Rows) */
-@media (min-width: 768px) {
-  .scrollable-project-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Create a responsive grid */
-    gap: 20px;
-    justify-content: center;
+/* Mobile Layout */
+@media (max-width: 768px) {
+  .scrollable-container {
+    gap: 10px;
+    padding: 10px 0;
   }
 
   .project-card {
-    min-width: 250px;
-    max-width: 100%; /* Allow cards to scale up to the grid's width */
+    min-width: 200px;
   }
 
-  .project-card img {
-    height: 150px; /* Larger images on desktop */
+  .project-info h3 {
+    font-size: 1.1em;
   }
 
-  .project-card p {
-    max-height: 50px; /* Allow a bit more space for text */
-    white-space: normal; /* Text can wrap on desktop */
+  .project-info p {
+    font-size: 0.8em;
+  }
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+  .projects-section {
+    padding: 30px;
+  }
+
+  .project-info h3 {
+    font-size: 1.5em;
+  }
+
+  .project-info p {
+    font-size: 1em;
   }
 }

@@ -25,6 +25,7 @@ body {
   box-sizing: border-box;
   background-color: var(--main-color);
   color: var(--third-color);
+  overflow: hidden;
 }
 
 main {
