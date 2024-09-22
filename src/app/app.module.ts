@@ -11,6 +11,9 @@ import { FormsModule } from '@angular/forms';
 import { EntryComponent } from './components/entries/entry/entry.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './components/about/about.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
+import { HomeComponent } from './home/home.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { AboutComponent } from './components/about/about.component';
     ListEntriesComponent,
     EntryComponent,
     AboutComponent,
+    ProjectCardComponent,
+    HomeComponent,
+    ProjectDetailComponent,
   ],
   imports: [
     BrowserModule,

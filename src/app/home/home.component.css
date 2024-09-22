@@ -1,0 +1,110 @@
+.home-container {
+  padding: 20px;
+}
+
+.projects-section {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.project-slide {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: #000;  /* Change the arrow color */
+}
+
+.slick-dots {
+  bottom: -30px; /* Position dots below the slider */
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.scrollable-project-list {
+  display: flex;
+  overflow-x: auto; /* Horizontal scrolling */
+  gap: 20px;
+  padding: 20px;
+  scroll-snap-type: x mandatory; /* Smooth snapping for scrolling */
+}
+
+.scrollable-project-list::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+.guestbook-section {
+  margin-top: 40px;
+}
+
+/* Mobile Layout (Single Row) */
+.scrollable-project-list {
+  display: flex;
+  overflow-x: auto; /* Horizontal scrolling */
+  gap: 10px;
+  padding: 10px;
+}
+
+.project-card {
+  min-width: 200px; /* Ensure a consistent width for scrolling */
+  max-width: 200px;
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.project-card img {
+  max-width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.project-card h2 {
+  font-size: 1.1em;
+  margin: 10px 0 5px;
+}
+
+.project-card p {
+  font-size: 0.9em;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Hover effect */
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+/* Desktop Layout (Multiple Rows) */
+@media (min-width: 768px) {
+  .scrollable-project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Create a responsive grid */
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .project-card {
+    min-width: 250px;
+    max-width: 100%; /* Allow cards to scale up to the grid's width */
+  }
+
+  .project-card img {
+    height: 150px; /* Larger images on desktop */
+  }
+
+  .project-card p {
+    max-height: 50px; /* Allow a bit more space for text */
+    white-space: normal; /* Text can wrap on desktop */
+  }
+}
