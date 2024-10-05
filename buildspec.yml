@@ -3,24 +3,35 @@ version: 0.2
 phases:
   install:
     commands:
+      - echo "---- STARTING INSTALL PHASE ----"
       - echo "Installing NPM dependencies..."
       - npm install
       - echo "Installing Angular CLI..."
       - npm install -g @angular/cli
+      - echo "---- INSTALL PHASE COMPLETED ----"
 
   build:
     commands:
+      - echo "---- STARTING BUILD PHASE ----"
       - echo "Building the Angular application with production configuration..."
       - ng build --configuration production --delete-output-path
+      - echo "Build completed."
+      - echo "Contents of dist/browser directory:"
+      - ls -al dist/browser  # List the contents of the dist/browser directory for verification
+      - echo "---- BUILD PHASE COMPLETED ----"
 
   post_build:
     commands:
-      - echo "Moving build files to root for deployment..."
+      - echo "---- STARTING POST-BUILD PHASE ----"
       - mkdir -p output
+      - echo "Copying build files to output directory..."
       - cp -r dist/browser/* output/
+      - echo "Contents of output directory:"
+      - ls -al output  # List the contents of the output directory for verification
+      - echo "---- POST-BUILD PHASE COMPLETED ----"
 
 artifacts:
-  base-directory: output
+  base-directory: dist/browser  # Ensure only the dist/browser folder is uploaded
   files:
     - '**/*'
-  discard-paths: yes
+  discard-paths: yes  # Discards the folder structure, ensuring the files are uploaded to the root of the S3 bucket
