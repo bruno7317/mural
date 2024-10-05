@@ -83,6 +83,7 @@
 /* Guestbook Section */
 .guestbook-section {
   margin-top: 40px;
+  display: flex;
 }
 
 /* Media Queries */

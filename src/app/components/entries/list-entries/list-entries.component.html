@@ -1,8 +1,4 @@
-<section class="presentation">
-  <header class="margin-1">
-    <h2>My Entries</h2>
-    <button (click)="addEntry()" routerLink="/newEntry">Add Entry</button>
-  </header>
+<section class="entry-list">
   <div *ngFor="let entry of entriesList" class="margin-1">
     <app-entry [entry]="entry"></app-entry>
   </div>
