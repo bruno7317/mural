@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing NPM dependencies..."
+      - npm install  # Install project dependencies
+  build:
+    commands:
+      - echo "Building the Angular application with production configuration..."
+      - ng build --configuration production --delete-output-path  # Build Angular project with your specific configuration
+artifacts:
+  files:
+    - dist/browser/**/*  # Include everything from the dist/browser folder (your production build output)
+  discard-paths: yes  # Discard original folder structure for simpler output
