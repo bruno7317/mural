@@ -14,5 +14,6 @@ phases:
       - ng build --configuration production --delete-output-path  # Builds the app
 
 artifacts:
+  base-directory: dist/browser  # Specify the directory where your build artifacts are located
   files:
-    - dist/browser/**/*  # Ensure you're pointing to the correct build output folder
+    - '**/*'  # Include all files from the dist/browser directory
