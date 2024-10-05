@@ -17,7 +17,7 @@ phases:
       - ng build --configuration production --delete-output-path
       - echo "Build completed."
       - echo "Contents of dist/browser directory:"
-      - ls -al dist/browser  # List the contents of the dist/browser directory for verification
+      - ls -al dist/browser
       - echo "---- BUILD PHASE COMPLETED ----"
 
   post_build:
@@ -27,11 +27,11 @@ phases:
       - echo "Copying build files to output directory..."
       - cp -r dist/browser/* output/
       - echo "Contents of output directory:"
-      - ls -al output  # List the contents of the output directory for verification
+      - ls -al output
       - echo "---- POST-BUILD PHASE COMPLETED ----"
 
 artifacts:
-  base-directory: dist/browser  # Ensure only the dist/browser folder is uploaded
+  base-directory: output  # Change base-directory to output folder where the build files are located
   files:
-    - '**/*'
-  discard-paths: yes  # Discards the folder structure, ensuring the files are uploaded to the root of the S3 bucket
+    - '**/*'  # Upload all files from the output directory
+  discard-paths: yes  # Discard folder structure, place files directly in S3 bucket root
