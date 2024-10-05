@@ -16,10 +16,11 @@ phases:
   post_build:
     commands:
       - echo "Moving build files to root for deployment..."
-      - mkdir -p output  # Create a temporary directory for the build output
-      - cp -r dist/browser/* output/  # Copy everything from dist/browser to the output directory
+      - mkdir -p output
+      - cp -r dist/browser/* output/
 
 artifacts:
-  base-directory: output  # This points to the newly created 'output' directory that contains the build files
+  base-directory: output
   files:
-    - '**/*'  # Include all files from the output directory
+    - '**/*'
+  discard-paths: yes  # Discards any sub-folder structure and uploads files directly to S3 root
