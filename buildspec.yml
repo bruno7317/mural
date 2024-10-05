@@ -23,4 +23,4 @@ artifacts:
   base-directory: output
   files:
     - '**/*'
-  discard-paths: yes  # Discards any sub-folder structure and uploads files directly to S3 root
+  discard-paths: yes
