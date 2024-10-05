@@ -4,16 +4,22 @@ phases:
   install:
     commands:
       - echo "Installing NPM dependencies..."
-      - npm install  # Installs project dependencies
+      - npm install
       - echo "Installing Angular CLI..."
-      - npm install -g @angular/cli  # Installs Angular CLI globally
+      - npm install -g @angular/cli
 
   build:
     commands:
       - echo "Building the Angular application with production configuration..."
-      - ng build --configuration production --delete-output-path  # Builds the app
+      - ng build --configuration production --delete-output-path
+
+  post_build:
+    commands:
+      - echo "Moving build files to root for deployment..."
+      - mkdir -p output  # Create a temporary directory for the build output
+      - cp -r dist/browser/* output/  # Copy everything from dist/browser to the output directory
 
 artifacts:
-  base-directory: dist/browser  # Specify the directory where your build artifacts are located
+  base-directory: output  # This points to the newly created 'output' directory that contains the build files
   files:
-    - '**/*'  # Include all files from the dist/browser directory
+    - '**/*'  # Include all files from the output directory
