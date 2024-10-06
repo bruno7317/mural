@@ -3,11 +3,11 @@ version: 0.2
 phases:
   install:
     commands:
-      - npm install  # Using npm install instead of npm ci to take advantage of caching
+      - npm ci
 
   build:
     commands:
-      - npx ng build --configuration production --delete-output-path
+      - npx ng build --configuration production
 
 artifacts:
   files:
@@ -16,5 +16,4 @@ artifacts:
 
 cache:
   paths:
-    - 'node_modules/**/*'
-    - 'package-lock.json'  # Ensure the lock file is cached to speed up dependency resolution
+    - 'package-lock.json'
