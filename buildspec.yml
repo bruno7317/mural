@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - npm ci
+      - npm install  # Using npm install instead of npm ci to take advantage of caching
 
   build:
     commands:
@@ -17,3 +17,4 @@ artifacts:
 cache:
   paths:
     - 'node_modules/**/*'
+    - 'package-lock.json'  # Ensure the lock file is cached to speed up dependency resolution
