@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --main-color: #cfd8dc;   /* Light grayish blue */
-  --second-color: #90a4ae; /* Soft slate blue */
-  --third-color: #546e7a;  /* Muted steel blue */
-  --hover-color: #37474f;  /* Dark charcoal blue for hover */
-  --fifth-color: #263238;  /* Deep, almost black slate blue */
+  --main-color: #dad7cd;
+  --second-color: #a3b18a;
+  --third-color: #588157;
+  --hover-color: #3a5a40;
+  --fifth-color: #344e41;
 
   --main-font: "Raleway", sans-serif;
   --second-font: "Krona One", sans-serif;
