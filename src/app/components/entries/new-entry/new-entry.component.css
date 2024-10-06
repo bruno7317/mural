@@ -1,0 +1,48 @@
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input,
+.form-textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--third-color);
+  font-family: var(--main-font);
+}
+
+.form-textarea {
+  height: 60px;
+  resize: vertical;
+}
+
+.input-error {
+  border: 2px solid var(--hover-color);
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.form-button {
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  width: 80px;
+}
+
+.form-button-submit {
+  background-color: var(--second-color);
+  color: var(--fifth-color);
+}
+
+.form-button-reset {
+  background-color: var(--hover-color);
+  color: var(--second-color);
+}
+
+.form-button:hover {
+  opacity: 0.9;
+}

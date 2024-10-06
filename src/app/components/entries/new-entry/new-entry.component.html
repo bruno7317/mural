@@ -1,22 +1,20 @@
 <section>
   <header>
-    <h2>Add a new entry:</h2>
-    <form>
-
-      <label for="entry-text">Entry:</label>
-      <input type="textarea" id="entry-text" name="entry-text" placeholder="What's on your mind?" [(ngModel)]="new_entry.message">
-
-      <label for="entry-author">Author:</label>
-      <input type="text" id="entry-author" name="entry-author" placeholder="Sign your words" [(ngModel)]="new_entry.name">
-
-      <p>Preview:</p>
-      <p>{{ new_entry.message }}</p>
-      <p>{{ new_entry.name }}</p>
-
-      <div>
-        <button (click)="saveEntry()">Save</button>
-        <button (click)="cancelEntry()" routerLink="/listEntries">Cancel</button>
-      </div>
-    </form>
+    <h2>Leave a message!</h2>
   </header>
+
+  <form #guestForm="ngForm" (ngSubmit)="saveEntry()">
+    <div class="form-group" [ngClass]="{'input-error': guestForm.submitted && !new_entry.message}">
+      <textarea class="form-textarea" id="entry-text" name="entry-text" placeholder="Your message" [(ngModel)]="new_entry.message" required aria-required="true"></textarea>
+    </div>
+
+    <div class="form-group" [ngClass]="{'input-error': guestForm.submitted && !new_entry.name}">
+      <input class="form-input" type="text" id="entry-author" name="entry-author" placeholder="Your name" [(ngModel)]="new_entry.name" required aria-required="true">
+    </div>
+
+    <footer class="form-actions">
+      <button class="form-button form-button-submit" type="submit">Save</button>
+      <button class="form-button form-button-reset" type="reset" (click)="clearEntry()">Clear</button>
+    </footer>
+  </form>
 </section>
