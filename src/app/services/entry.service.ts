@@ -1,8 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Entry } from '../components/entries/entry/entry';
-import { Observable, of } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,20 +12,31 @@ export class EntryService {
 
   private readonly API = environment.apiUrl;
 
-  private staticEntries: Entry[] = [
-    { id: 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', name: 'Alice', message: 'Hello, this is a static message from Alice.', timestamp: '2024-09-19T12:00:00' },
-    { id: '81dc9bdb52d04dc20036dbd8313ed055', name: 'Bob', message: 'Bob says hi! This is another static message.', timestamp: '2024-09-19T13:00:00' },
-    { id: '1c383cd30b7c298ab50293adfecb7b18', name: 'Charlie', message: 'Charlie’s message is also static.', timestamp: '2024-09-19T14:00:00' }
-  ];
-
   constructor(private http: HttpClient) {}
 
+  private handleError(error: any) {
+    console.error('API call failed:', error);
+    return throwError(() => new Error('An error occurred with the API.'));
+  }
+
   list(): Observable<Entry[]> {
-    return of(this.staticEntries);
+    console.log('Fetching entries from API:', this.API);
+    return this.http.get<Entry[]>(this.API).pipe(
+      tap((entries) => {
+        console.log('Entries received from API:', entries);
+      }),
+      catchError(this.handleError)
+    );
   }
 
   create(entry: Entry): Observable<Entry> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post<Entry>(this.API, entry, { headers });
+    console.log('Sending new entry to API:', entry);
+    return this.http.post<Entry>(this.API, entry, { headers }).pipe(
+      tap((createdEntry) => {
+        console.log('Entry created:', createdEntry);
+      }),
+      catchError(this.handleError)
+    );
   }
 }

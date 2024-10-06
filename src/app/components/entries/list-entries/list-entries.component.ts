@@ -5,21 +5,32 @@ import { EntryService } from '../../../services/entry.service';
 @Component({
   selector: 'app-list-entries',
   templateUrl: './list-entries.component.html',
-  styleUrl: './list-entries.component.css'
+  styleUrls: ['./list-entries.component.css']
 })
 export class ListEntriesComponent implements OnInit {
 
-  constructor( private service: EntryService ) {}
+  entriesList: Entry[] = [];
 
-  entriesList: Entry[] = []
+  constructor(private service: EntryService) {}
 
   ngOnInit(): void {
-    this.service.list().subscribe((entriesList) => {
-      this.entriesList = entriesList;
+    console.log('Component initialized. Fetching entries...');
+
+    this.service.list().subscribe({
+      next: (entriesList) => {
+        console.log('Entries list received in component:', entriesList);
+        this.entriesList = entriesList;
+      },
+      error: (error) => {
+        console.error('Error fetching entries:', error);
+      },
+      complete: () => {
+        console.log('Fetching entries completed.');
+      }
     });
   }
 
-  addEntry()
-  {
+  addEntry() {
+
   }
 }
