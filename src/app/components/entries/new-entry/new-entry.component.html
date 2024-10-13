@@ -1,15 +1,16 @@
 <section>
   <header>
-    <h2>Leave a message!</h2>
+    <h2 *ngIf="!hasSubmitted">Leave a message!</h2>
+    <h2 *ngIf="hasSubmitted">Thank you for leaving a message!</h2>
   </header>
 
-  <form #guestForm="ngForm" (ngSubmit)="saveEntry()">
-    <div class="form-group" [ngClass]="{'input-error': guestForm.submitted && !new_entry.message}">
-      <textarea class="form-textarea" id="entry-text" name="entry-text" placeholder="Your message" [(ngModel)]="new_entry.message" required aria-required="true"></textarea>
+  <form *ngIf="!hasSubmitted" #guestForm="ngForm" (ngSubmit)="saveEntry(guestForm)">
+    <div class="form-group" [ngClass]="{'input-error': guestForm.submitted && !newEntry.message}">
+      <textarea class="form-textarea" id="entry-text" name="entry-text" placeholder="Your message" [(ngModel)]="newEntry.message" required aria-required="true"></textarea>
     </div>
 
-    <div class="form-group" [ngClass]="{'input-error': guestForm.submitted && !new_entry.name}">
-      <input class="form-input" type="text" id="entry-author" name="entry-author" placeholder="Your name" [(ngModel)]="new_entry.name" required aria-required="true">
+    <div class="form-group" [ngClass]="{'input-error': guestForm.submitted && !newEntry.name}">
+      <input class="form-input" type="text" id="entry-author" name="entry-author" placeholder="Your name" [(ngModel)]="newEntry.name" required aria-required="true">
     </div>
 
     <footer class="form-actions">

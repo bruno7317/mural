@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Entry } from '../entry/entry';
 import { EntryService } from '../../../services/entry.service';
-import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms'; // Use forms for cleaner validation
 
 @Component({
   selector: 'app-new-entry',
@@ -9,28 +9,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./new-entry.component.css']
 })
 export class NewEntryComponent {
+  @Output() entryCreated = new EventEmitter<Entry>();
 
-  new_entry: Entry = {
+  newEntry: Entry = {
     id: "",
     message: "",
     name: ""
-  }
+  };
 
-  constructor(
-    private service: EntryService,
-    private router: Router
-  ) {}
+  hasSubmitted: boolean = this.isFormLocked();
 
-  saveEntry() {
-    if (!this.new_entry.message || !this.new_entry.name) {
+  constructor(private service: EntryService) {}
+
+  saveEntry(form: NgForm) {
+    if (!form.valid) {
       alert("Both message and author name are required!");
       return;
     }
 
-    this.service.create(this.new_entry).subscribe({
-      next: () => {
-        this.router.navigate(['/listEntries']);
+    this.service.create(this.newEntry).subscribe({
+      next: (createdEntry) => {
         this.clearEntry();
+        this.lockForm();
+        this.entryCreated.emit(createdEntry);
       },
       error: (err) => {
         console.error("Error saving the entry:", err);
@@ -39,7 +40,16 @@ export class NewEntryComponent {
     });
   }
 
-  clearEntry() {
-    this.new_entry = { id: "", message: "", name: "" };
+  private lockForm() {
+    localStorage.setItem('guestbook_submitted', 'true');
+    this.hasSubmitted = true;
+  }
+
+  private isFormLocked(): boolean {
+    return localStorage.getItem('guestbook_submitted') === 'true';
+  }
+
+  public clearEntry() {
+    this.newEntry = { id: "", message: "", name: "" };
   }
 }

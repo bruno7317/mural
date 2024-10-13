@@ -13,7 +13,7 @@
   </section>
 
   <section class="guestbook-section">
-    <app-new-entry></app-new-entry>
-    <app-list-entries></app-list-entries>
+    <app-new-entry (entryCreated)="listEntriesComponent.onEntryCreated($event)"></app-new-entry>
+    <app-list-entries #listEntriesComponent></app-list-entries>
   </section>
 </div>
