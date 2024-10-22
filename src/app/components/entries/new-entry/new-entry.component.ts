@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Entry } from '../entry/entry';
 import { EntryService } from '../../../services/entry.service';
-import { NgForm } from '@angular/forms'; // Use forms for cleaner validation
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-new-entry',
@@ -32,6 +32,7 @@ export class NewEntryComponent {
         this.clearEntry();
         this.lockForm();
         this.entryCreated.emit(createdEntry);
+        this.showToasty();
       },
       error: (err) => {
         console.error("Error saving the entry:", err);
@@ -51,5 +52,24 @@ export class NewEntryComponent {
 
   public clearEntry() {
     this.newEntry = { id: "", message: "", name: "" };
+  }
+
+  private showToasty() {
+    const toasty = document.getElementById('toasty');
+    const audio = document.getElementById('toasty-audio') as HTMLAudioElement;
+
+    if (toasty) {
+      toasty.classList.remove('hidden');
+      toasty.classList.add('show');
+
+      if (audio) {
+        audio.play();
+      }
+
+      setTimeout(() => {
+        toasty.classList.remove('show');
+        toasty.classList.add('hidden');
+      }, 1000);
+    }
   }
 }

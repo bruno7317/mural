@@ -46,3 +46,28 @@
 .form-button:hover {
   opacity: 0.9;
 }
+
+.toasty {
+  position: fixed;
+  right: -200px;
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+
+.toasty-img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.hidden {
+  transform: translate(0, 0);
+}
+
+.show {
+  transform: translate(-200px);
+}
