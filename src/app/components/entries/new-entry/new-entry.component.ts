@@ -69,7 +69,7 @@ export class NewEntryComponent {
       setTimeout(() => {
         toasty.classList.remove('show');
         toasty.classList.add('hidden');
-      }, 1000);
+      }, 1500);
     }
   }
 }
