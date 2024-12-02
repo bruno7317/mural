@@ -2,6 +2,40 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 8px;
-  background-color: var(--fifth-color);
+  padding: 50px;
+  background-color: var(--cinza-600);
+  gap: 32px;
+}
+
+.credits {
+  margin-top: 32px;
+  display: flex;
+  gap: 50px;
+}
+
+a {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+a:hover {
+  font-weight: 500;
+}
+
+.contact-links {
+  display: flex;
+  list-style-type: none;
+  gap: 32px;
+}
+
+.contact-links li a {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.contact-links li a:hover svg path {
+  stroke: var(--verde-100);
 }

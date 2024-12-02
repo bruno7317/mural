@@ -1,9 +1,20 @@
-.about-content {
-  padding: 10%;
+.container {
   display: flex;
-  flex-direction: column;
-  gap: 10%;
-  height: 50vh;
+  height: 700px;
+  justify-content: center;
+}
+
+.picture {
+  border-radius: 15px;
+  width: 500px;
+}
+
+.about-content {
+  display: flex;
+  width: 1200px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 90px;
 }
 
 .about-content-text {
@@ -14,12 +25,16 @@
   font-size: 26px;
 }
 
-.about-content-reach {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+.about-title {
+  color: var(--verde-100);
 }
 
-.button-icon {
-  width: 15px;
+.experience {
+  display: flex;
+  gap: 40px;
+  list-style-type: none;
+}
+
+.description {
+  width: 70px;
 }

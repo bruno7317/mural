@@ -1,7 +1,33 @@
-.header-links {
+.container {
+  opacity: 0.9;
+  background: var(--cinza-600);
   display: flex;
   justify-content: center;
-  gap: 1%;
-  background-color: var(--fifth-color);
-  padding: 0.5% 0.5%;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__links a {
+  display: flex;
+  width: 133px;
+  height: 41px;
+  padding: 0.604px 60px 18.396px 0px;
+  align-items: center;
+}
+
+.navbar a:hover svg path {
+  stroke: var(--verde-100);
 }

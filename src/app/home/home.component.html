@@ -1,19 +1,20 @@
-<div class="home-container">
-  <section class="projects-section">
-    <h1>My Projects</h1>
-    <div class="scrollable-container">
-      <div *ngFor="let project of projects" class="project-card" (click)="goToProject(project.id)">
-        <img [src]="project.imageUrl" alt="{{project.title}}" class="project-image">
-        <div class="project-info">
-          <h3>{{project.title}}</h3>
-          <p>{{project.description}}</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="container">
+  <div class="circle-1"></div>
+  <div class="circle-2"></div>
+  <div class="macbook"></div>
+  <div class="intro__background">
+    <section class="intro">
+      <h1>Hi, I'm</h1>
+      <p class="hero">Bruno DeSousi</p>
+      <p class="p-03">Full-Stack Software Developer</p>
+      <p class="p-02 intro__pitch">
+        I design, build and deploy software that helps businesses solve complex challenges and achieve their goals.
+      </p>
+    </section>
+  </div>
+  <div id="home" class="home__background">
+    <div>CAROUSEL</div>
 
-  <section class="guestbook-section">
-    <app-new-entry (entryCreated)="listEntriesComponent.onEntryCreated($event)"></app-new-entry>
-    <app-list-entries #listEntriesComponent></app-list-entries>
-  </section>
+  </div>
+  <app-about></app-about>
 </div>
