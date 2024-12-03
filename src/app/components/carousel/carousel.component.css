@@ -1,0 +1,88 @@
+.carousel-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -200px;
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+  background-color: var(--cinza-400);
+}
+
+.slide__content {
+  display: flex;
+  height: 400px;
+  width: 1040px;
+}
+
+img {
+  width: 50%;
+}
+
+.project-info {
+  width: 50%;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-title {
+  color: var(--verde-100);
+}
+
+.nav-button {
+  position: relative;
+  width: 60px;
+  height: 50px;
+  background-color: var(--branco-100);
+  border-radius: 48%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.nav-button.left {
+  left: 30px;
+}
+
+.nav-button.right {
+  right: 30px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 45px;
+  right: 460px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  background-color: var(--cinza-300);
+  border-radius: 50%;
+}
+
+.indicator.active {
+  background-color: var(--verde-100);
+}

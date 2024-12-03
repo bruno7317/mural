@@ -105,7 +105,7 @@ h3 {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: var(--Headline-Large-Tracking, 0px);
+  letter-spacing: var(--Headline-Large-Tracking);
 }
 
 .p-01 {
@@ -115,7 +115,7 @@ h3 {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: var(--Headline-Large-Tracking, 0px);
+  letter-spacing: var(--Headline-Large-Tracking);
 }
 
 .description {

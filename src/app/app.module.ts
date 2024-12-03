@@ -13,6 +13,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ProjectCardComponent } from './project-card/project-card.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
     ProjectCardComponent,
     HomeComponent,
     ProjectDetailComponent,
+    CarouselComponent,
   ],
   bootstrap: [AppComponent],
   imports: [
