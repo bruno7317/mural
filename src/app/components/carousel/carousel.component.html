@@ -1,4 +1,4 @@
-<div class="carousel-container">
+<div id="home" class="carousel-container">
   <button class="nav-button left" (click)="previousSlide()">
     <svg xmlns="http://www.w3.org/2000/svg" width="41" height="36" viewBox="0 0 41 36" fill="none">
       <path d="M6.87588 18.3665L33.5425 18.3665" stroke="#47C7AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -11,8 +11,8 @@
       class="slide"
       *ngFor="let project of projects; let i = index"
       [class.active]="i === currentSlide">
-      <div class="slide__content">
-        <img [src]="project.image" [alt]="project.title" />
+      <div class="slide__content" (click)="navigateToProject(project.id)">
+        <img [src]="project.imageUrl" [alt]="project.title" />
         <div class="project-info">
           <h2 class="h2-bold project-title">{{ project.title }}</h2>
           <p class="p-02">{{ project.description }}</p>

@@ -1,11 +1,13 @@
 .container {
-  opacity: 0.9;
+  position: relative;
+  opacity: 1;
   background: var(--cinza-600);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100px;
   width: 100%;
+  z-index: 4;
 }
 
 .navbar {
@@ -23,8 +25,7 @@
 .navbar__links a {
   display: flex;
   width: 133px;
-  height: 41px;
-  padding: 0.604px 60px 18.396px 0px;
+  height: 40px;
   align-items: center;
 }
 

@@ -150,3 +150,7 @@ a:hover {
   font-weight: 700;
   color: var(--verde-100);
 }
+
+html {
+  scroll-behavior: smooth;
+}

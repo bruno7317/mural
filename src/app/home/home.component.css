@@ -65,6 +65,7 @@
   -webkit-mask-size: 100% 60%;
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
+  pointer-events: none;
 }
 
 .home__background {

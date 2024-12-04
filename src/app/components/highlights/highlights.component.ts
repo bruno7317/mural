@@ -1,5 +1,6 @@
 import { ProjectService, Project, Tag } from '../../services/project.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-highlights',
@@ -9,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 export class HighlightsComponent implements OnInit {
   highlightedProjects: Project[] = [];
 
-  constructor(private projectService: ProjectService) {}
+  constructor(private projectService: ProjectService, private router: Router) {}
 
   ngOnInit(): void {
     this.highlightedProjects = this.projectService.getProjectsByTag(Tag.Highlight);
+  }
+
+  navigateToProject(projectId: string): void {
+    this.router.navigate([`/projects/${projectId}`]);
   }
 }
