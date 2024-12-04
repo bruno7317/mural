@@ -1,0 +1,20 @@
+<div class="highlights-container">
+  <div class="project-cards">
+    <div *ngFor="let project of highlightedProjects" class="project-card">
+      <a *ngIf="project.link" [href]="project.link" target="_blank">
+        <img
+          [src]="project.image"
+          [alt]="project.title"
+          class="project-image"
+        />
+        <div class="overlay">
+          <h2 class="h2-semibold project-title">{{ project.title }}</h2>
+          <svg xmlns="http://www.w3.org/2000/svg" width="82" height="72" viewBox="0 0 41 36" fill="none">
+            <path d="M34.1241 18.3665L7.4574 18.3665" stroke="#47C7AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M25.7908 11.0452C25.7908 11.0452 34.1241 16.4374 34.1241 18.3667C34.1241 20.296 25.7908 25.688 25.7908 25.688" stroke="#47C7AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

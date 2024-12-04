@@ -62,7 +62,7 @@ h1 {
 }
 
 .h2-semibold {
-  color: var(--cinza-500);
+  color: var(--branco-100);
   font-family: var(--main-font);
   font-size: var(--Headline-Large-Size);
   font-style: normal;

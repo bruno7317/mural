@@ -14,6 +14,7 @@ import { ProjectCardComponent } from './project-card/project-card.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { HighlightsComponent } from './components/highlights/highlights.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     HomeComponent,
     ProjectDetailComponent,
     CarouselComponent,
+    HighlightsComponent,
   ],
   bootstrap: [AppComponent],
   imports: [

@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
 
+export enum Tag {
+  Highlight = 'highlight',
+  Angular = 'angular',
+}
+
 export interface Project {
   title: string;
   description: string;
   image: string;
   link?: string;
+  tags?: Tag[];
 }
 
 @Injectable({
@@ -17,6 +23,7 @@ export class ProjectService {
       description: 'Lorem ipsum dolor sit amet. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       image: 'assets/images/chat-app.webp',
       link: 'https://example.com/project1',
+      tags: [Tag.Highlight, Tag.Angular],
     },
     {
       title: 'Project 2',
@@ -29,6 +36,20 @@ export class ProjectService {
       description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
       image: 'assets/images/expense-tracker.webp',
       link: 'https://example.com/project3',
+      tags: [Tag.Highlight],
+    },
+    {
+      title: 'Project 4',
+      description: 'Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      image: 'assets/images/expense-tracker.webp',
+      link: 'https://example.com/project3',
+      tags: [Tag.Highlight],
+    },
+    {
+      title: 'Project 5',
+      description: 'Aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      image: 'assets/images/expense-tracker.webp',
+      link: 'https://example.com/project3',
     },
   ];
 
@@ -36,5 +57,9 @@ export class ProjectService {
 
   getProjects(): Project[] {
     return this.projects;
+  }
+
+  getProjectsByTag(tag: Tag): Project[] {
+    return this.projects.filter((project) => project.tags?.includes(tag));
   }
 }
