@@ -17,6 +17,7 @@ export class HighlightsComponent implements OnInit {
   }
 
   navigateToProject(projectId: string): void {
+    console.log('projectId', projectId);
     this.router.navigate([`/projects/${projectId}`]);
   }
 }
