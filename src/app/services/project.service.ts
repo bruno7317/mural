@@ -3,15 +3,18 @@ import { Injectable } from '@angular/core';
 export enum Tag {
   Highlight = 'highlight',
   Angular = 'angular',
-  NodeJS = 'nodejs',
-  MongoDB = 'mongodb',
-  WebSockets = 'websockets',
-  StripeAPI = 'stripe-api',
-  PayPalAPI = 'paypal-api',
-  D3 = 'd3',
-  OpenWeatherAPI = 'openweather-api',
-  Bootstrap = 'bootstrap',
-  JWT = 'jwt',
+  Java = 'java',
+  SpringFramework = 'spring-framework',
+  TypeScript = 'typescript',
+  AWS = 'aws',
+  AWSLambda = 'aws-lambda',
+  DynamoDB = 'dynamodb',
+  APIGateway = 'api-gateway',
+  Serverless = 'serverless',
+  Git = 'git',
+  Agile = 'agile',
+  GoogleMapsAPI = 'google-maps-api',
+  Mentorship = 'mentorship',
 }
 
 export interface Project {
@@ -19,8 +22,10 @@ export interface Project {
   title: string;
   description: string;
   imageUrl: string;
+  detailImageUrl: string;
+  objective: string;
   challenges: string;
-  solutions: string;
+  results: string;
   tags?: Tag[];
 }
 
@@ -30,125 +35,102 @@ export interface Project {
 export class ProjectService {
   private projects: Project[] = [
     {
-      id: 'project-1',
-      title: 'E-commerce Website',
-      imageUrl: 'assets/images/ecommerce.webp',
+      id: 'project-4',
+      title: 'Innovative File Comparison',
+      imageUrl: 'assets/images/tag-safety.png',
+      detailImageUrl: 'assets/images/tag-safety-detail.webp',
       description:
-        'A fully functional e-commerce website with a product catalog, shopping cart, and payment integration.',
+        'Developed a CSV file comparison feature for the TagSafety platform, enabling clients to visualize and reconcile updates against existing electrical safety data. Initially unfamiliar with Grails and Groovy, I leveraged AI-assisted learning to quickly adapt, delivering a streamlined, intuitive tool that surpassed the client’s expectations. Enthusiastic feedback prompted additional feature requests, bringing in new revenue opportunities, and earned me personal commendations from the CEO.',
+      objective:
+        'To simplify the client’s workflow for updating electrical safety parameters and drive project growth by implementing a dynamic, revenue-generating feature.',
       challenges:
-        'Ensuring smooth payment integration across multiple payment gateways, and maintaining performance with large product catalogs.',
-      solutions:
-        'Implemented Stripe and PayPal for payment processing, used lazy loading for product images, and optimized database queries for faster load times.',
-      tags: [Tag.Angular, Tag.NodeJS, Tag.MongoDB, Tag.StripeAPI, Tag.PayPalAPI],
+        'Adapting to Grails and Groovy under time constraints and ensuring accurate data comparisons. Overcoming these hurdles demanded rapid skill acquisition, creativity, and effective problem-solving.',
+      results:
+        'The feature’s success not only delighted the client—leading to expansions and higher revenue—but also reinforced trust in the platform’s capabilities and elevated the company’s reputation for innovation.',
+      tags: [
+        Tag.Git,
+        Tag.Agile,
+        Tag.Highlight
+      ]
     },
     {
-      id: 'project-2',
-      title: 'Task Management App',
-      imageUrl: 'assets/images/task-app.webp',
+      id: 'project-1',
+      title: 'Google Maps Integration for Sipag App',
+      imageUrl: 'assets/images/sipag-google-maps.png',
+      detailImageUrl: 'assets/images/sipag-delivery.webp',
       description:
-        'A web application for tracking personal and team tasks, with features like deadlines, priorities, and team collaboration.',
+        'Integrated Google Maps API into the Sipag app to enhance vendor registration by enabling precise geolocation. This feature improved accessibility for Cabal workers and delivery drivers, facilitating faster delivery of payment terminals and enhancing overall user experience.',
+      objective: 'To improve vendor registration by allowing precise location identification and enabling faster, more reliable delivery of card machines.',
       challenges:
-        'Ensuring real-time updates across multiple users and devices, while maintaining data consistency.',
-      solutions:
-        'Integrated WebSockets for real-time task updates and used Redux for state management, ensuring consistent task status across all devices.',
-      tags: [Tag.Angular, Tag.NodeJS, Tag.WebSockets],
+        'Overcame initial inexperience with API integration and addressed the complexities of unreliable addresses and chaotic street layouts in Brazilian cities.',
+      results:
+        'Significantly improved operational efficiency by enabling precise pin placement on maps. Delivery drivers used Street View to locate vendors, reducing delays caused by address confirmation issues. Vendors received card machines faster, ensuring uninterrupted service and revenue generation for Cabal.',
+      tags: [
+        Tag.Java,
+        Tag.GoogleMapsAPI,
+        Tag.Highlight],
     },
     {
       id: 'project-3',
-      title: 'Weather Dashboard',
-      imageUrl: 'assets/images/weather.webp',
+      title: 'Dijkstra’s Algorithm for Vancouver SkyTrain',
+      imageUrl: 'assets/images/train-station-algorithm.png',
+      detailImageUrl: 'assets/images/train-station-algorithm-detail.webp',
       description:
-        'A real-time weather dashboard displaying local forecasts and weather trends using a public API.',
+        'Utilized Dijkstra’s algorithm to implement a shortest-path solution for calculating travel distances between train stations on the Vancouver SkyTrain network. Integrated into the Scadacom platform, this feature provided real-time tracking of total distance traveled by individual trains, informing maintenance schedules and improving operational reliability.',
+      objective:
+        'To enhance asset reliability and streamline maintenance planning by accurately quantifying distance traveled, thus proactively guiding timely servicing and reducing the risk of unexpected downtime.',
       challenges:
-        'Efficiently fetching and displaying real-time weather data without exceeding API rate limits.',
-      solutions:
-        'Used caching mechanisms to store frequently fetched data, and implemented polling intervals to reduce the frequency of API requests.',
-      tags: [Tag.Angular, Tag.OpenWeatherAPI, Tag.Bootstrap, Tag.Highlight],
+        'Adapting a computationally intensive algorithm for real-time operations, ensuring integration within existing SCADA systems, and balancing efficiency with the complexity of large-scale transportation networks. Additionally, working within legacy code and conducting on-site testing with clients required strong communication and technical adaptability.',
+      results:
+        'Delivered a refined, fully integrated solution that became instrumental for Vancouver SkyTrain. The system facilitated data-driven maintenance decisions, likely increasing train availability and reliability. Post-launch, coordinated live testing and monitoring with clients in Vancouver ensured smooth adoption and sustained operational benefits.',
+      tags: [
+        Tag.Highlight
+      ]
     },
     {
-      id: 'project-4',
-      title: 'Portfolio Website',
-      imageUrl: 'assets/images/portfolio.webp',
+      id: 'project-2',
+      title: 'Intricate Team Leadership & Mentorship',
+      imageUrl: 'assets/images/intricate-team.png',
+      detailImageUrl: 'assets/images/intricate-team-detail.webp',
       description:
-        'A personal portfolio website showcasing projects, blog posts, and social media links.',
+        'Led a team of six Dalhousie University co-op students working on a monolithic application encompassing payroll, employee management, and client-facing features. Employed pair programming to guide newcomers through ticket resolution, instilling confidence, accelerating their learning curve, and ensuring a steady flow of completed tasks. This collaborative approach helped maintain code quality and improved operational smoothness.',
+      objective:
+        'To streamline the development process, reduce the backlog of pending tickets, and cultivate a supportive, growth-oriented environment for junior developers.',
       challenges:
-        'Designing a responsive and clean UI that reflects personal branding, while ensuring fast load times.',
-      solutions:
-        'Used a mobile-first design approach, implemented lazy loading for images, and optimized CSS and JavaScript files for better performance.',
-      tags: [Tag.Angular, Tag.Highlight],
+        'Ensuring that inexperienced team members quickly adapted to a complex codebase and established best practices without landmark features. Maintaining consistent progress despite shifting priorities and the eventual impact of the COVID-19 pandemic.',
+      results:
+        'Significantly reduced the backlog of tickets and introduced incremental improvements throughout the system. The team’s increased confidence and productivity enhanced the stability and maintainability of the application, reflecting positively on both client satisfaction and internal morale.',
+      tags: [
+        Tag.Java,
+        Tag.SpringFramework,
+        Tag.Git,
+        Tag.Mentorship,
+        Tag.Agile
+      ]
     },
     {
       id: 'project-5',
-      title: 'Restaurant Reservation System',
-      imageUrl: 'assets/images/restaurant.webp',
+      title: 'Showcasing Full-Stack & Serverless Proficiency',
+      imageUrl: 'assets/images/portfolio.png',
+      detailImageUrl: 'assets/images/portfolio-detail.png',
       description:
-        'A restaurant reservation system that allows users to book tables online and manage reservations for restaurant owners.',
+        'Developed a serverless Portfolio application to highlight a broad range of skills, from front-end design to backend integration with AWS resources. This project served as both a learning ground and a demonstrable solution, featuring a fully responsive Angular-based UI and a dynamic AWS-based backend leveraging Lambda, DynamoDB, and API Gateway.',
+      objective:
+        'To create a self-contained, scalable, and easily maintainable platform for showcasing professional experience, technical aptitude, and creativity. The goal was to demonstrate adaptability, problem-solving, and end-to-end application development capabilities.',
       challenges:
-        'Managing high volumes of reservations during peak hours and preventing double bookings.',
-      solutions:
-        'Implemented a reservation queue system and added conflict checks for simultaneous bookings, ensuring no overlaps.',
-      tags: [Tag.Angular, Tag.NodeJS, Tag.MongoDB, Tag.Highlight],
-    },
-    {
-      id: 'project-6',
-      title: 'Real-time Chat Application',
-      imageUrl: 'assets/images/chat-app.webp',
-      description:
-        'A real-time chat application with user authentication, message persistence, and group chat functionality.',
-      challenges:
-        'Maintaining real-time message synchronization between users and storing chat histories efficiently.',
-      solutions:
-        'Used WebSockets for real-time communication and MongoDB for persistent message storage, with user authentication through JWT.',
-      tags: [Tag.Angular, Tag.NodeJS, Tag.WebSockets, Tag.JWT],
-    },
-    {
-      id: 'project-7',
-      title: 'Fitness Tracking App',
-      imageUrl: 'assets/images/fitness.webp',
-      description:
-        'A fitness app that tracks workouts, monitors progress, and sets goals, integrated with mobile devices.',
-      challenges:
-        'Ensuring accurate tracking of fitness data from multiple devices and providing users with real-time feedback.',
-      solutions:
-        'Integrated with Apple HealthKit and Google Fit APIs for real-time data sync, and used charts for visualizing user progress.',
-      tags: [Tag.Angular, Tag.D3],
-    },
-    {
-      id: 'project-8',
-      title: 'Online Learning Platform',
-      imageUrl: 'assets/images/learning-platform.webp',
-      description:
-        'An online learning platform with video lessons, quizzes, and a certification system for completed courses.',
-      challenges:
-        'Managing video streaming efficiently and tracking user progress through quizzes and exams.',
-      solutions:
-        'Used a content delivery network (CDN) for video streaming and integrated a quiz engine with progress tracking and automated certificate generation.',
-      tags: [Tag.Angular, Tag.NodeJS],
-    },
-    {
-      id: 'project-9',
-      title: 'Expense Tracker',
-      imageUrl: 'assets/images/expense-tracker.webp',
-      description:
-        'A personal expense tracking tool with reporting features to monitor spending habits and set savings goals.',
-      challenges:
-        'Visualizing expense data clearly and allowing users to categorize transactions easily.',
-      solutions:
-        'Used D3.js for interactive data visualizations and provided users with simple categorization options for quick expense management.',
-      tags: [Tag.Angular, Tag.NodeJS, Tag.D3],
-    },
-    {
-      id: 'project-10',
-      title: 'Stock Market Tracker',
-      imageUrl: 'assets/images/stock-tracker.webp',
-      description:
-        'A stock market tracker that monitors live stock prices, provides portfolio management, and tracks financial news.',
-      challenges:
-        'Fetching real-time stock data without exceeding API limits and ensuring portfolio values are up to date with market fluctuations.',
-      solutions:
-        'Used polling intervals to fetch stock data periodically, with WebSockets for real-time updates, and charting libraries to visualize stock trends.',
-      tags: [Tag.Angular, Tag.WebSockets],
-    },
+        'Adapting quickly to unfamiliar technologies in AWS, learning new front-end and architectural patterns on the fly, and maintaining code quality while integrating multiple services. Managing project timelines, prioritizing features, and ensuring seamless communication between the front end and backend components.',
+      results:
+        'Successfully launched a fully functional, serverless Portfolio application that provided a tangible platform for demonstrating multifaceted skills. By overcoming technical hurdles and mastering new AWS services, achieved a robust solution that not only showcased proficiency but also reinforced confidence in tackling complex full-stack projects.',
+      tags: [
+        Tag.Angular,
+        Tag.TypeScript,
+        Tag.AWS,
+        Tag.AWSLambda,
+        Tag.DynamoDB,
+        Tag.APIGateway,
+        Tag.Serverless
+      ]
+    }
   ];
 
   constructor() {}
