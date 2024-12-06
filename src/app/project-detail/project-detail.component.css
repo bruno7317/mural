@@ -76,11 +76,11 @@
 }
 
 .other-projects {
-  margin-top: 150px;
+  padding-top: 50px;
 }
 
 .other-projects .h2-bold {
-  padding-left: 50px;
+  padding-left: 280px;
 }
 
 .background-01 {
@@ -117,13 +117,12 @@
 }
 
 .background-03 {
+  position: relative;
   background: var(--cinza-500);
-  position: absolute;
-  top: 150%;
-  left: 0;
-  width: 100%;
-  height: 600px;
-  z-index: -1;
+  width: 1869px;
+  min-height: 400px;
+  margin-left: -17%;
+  z-index: 1;
 }
 
 .breadcrumb__title {
