@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { HighlightsComponent } from './components/highlights/highlights.component';
+import { NotificationBannerComponent } from './notification-banner/notification-banner.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HighlightsComponent } from './components/highlights/highlights.componen
     ProjectDetailComponent,
     CarouselComponent,
     HighlightsComponent,
+    NotificationBannerComponent,
   ],
   bootstrap: [AppComponent],
   imports: [
