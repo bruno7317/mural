@@ -7,6 +7,9 @@
 .picture {
   border-radius: 15px;
   width: 500px;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
 }
 
 .about-content {
