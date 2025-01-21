@@ -162,3 +162,13 @@
   padding: 6px 12px;
   color: var(--verde-400);
 }
+
+.p-01 {
+  color: var(--cinza-500);
+  font-family: var(--main-font);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: var(--Headline-Large-Tracking);
+}

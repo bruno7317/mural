@@ -21,6 +21,16 @@
   cursor: pointer;
 }
 
+.h2-semibold {
+  color: var(--branco-100);
+  font-family: var(--main-font);
+  font-size: var(--Headline-Large-Size);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--Headline-Large-Line-Height);
+  letter-spacing: var(--Headline-Large-Tracking);
+}
+
 .overlay {
   position: absolute;
   top: 0;

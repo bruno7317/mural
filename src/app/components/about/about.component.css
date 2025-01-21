@@ -47,3 +47,12 @@
   line-height: 120%;
   width: 70px;
 }
+
+.highlight {
+  color: var(--verde-100);
+  font-family: var(--main-font);
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 120%;
+}

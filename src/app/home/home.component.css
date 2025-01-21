@@ -5,6 +5,25 @@
   background: var(--cinza-500);
 }
 
+.hero {
+  color: var(--branco-100);
+  font-family: var(--main-font);
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -2.4px;
+}
+
+.p-03 {
+  color: var(--verde-100);
+  font-family: var(--main-font);
+  font-size: var(--sds-typography-subtitle-size-base);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+}
+
 .intro__background {
   background: linear-gradient(180deg, rgba(64, 64, 74, 0.00) 0%, #40404A 124.73%);
   background-blend-mode: multiply;
