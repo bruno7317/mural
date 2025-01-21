@@ -17,7 +17,13 @@ export class HighlightsComponent implements OnInit {
   }
 
   navigateToProject(projectId: string): void {
-    console.log('projectId', projectId);
-    this.router.navigate([`/projects/${projectId}`]);
+    this.router.navigateByUrl(`/projects/${projectId}`);
+
+    setTimeout(() => {
+      const element = document.getElementById(`project-${projectId}`);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 0);
   }
 }
