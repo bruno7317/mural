@@ -131,12 +131,22 @@
   margin-left: 10px;
 }
 
-h1 {
+.h1 {
   color: var(--branco-100);
   margin: 20px 0;
+  font-family: var(--main-font);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
 }
 
-h3 {
+.h3 {
+  font-family: var(--main-font);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
   color: var(--branco-100);
 }
 

@@ -1,11 +1,11 @@
 <div *ngIf="project" class="project-detail-container">
   <div class="navbar">
     <div>
-      <a routerLink="/">Home \ </a>
+      <a routerLink="/" class="link">Home \ </a>
       <p class="p-01 breadcrumb__title">{{ project.title }}</p>
     </div>
     <div>
-      <a routerLink="/">
+      <a routerLink="/" class="link">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="36" viewBox="0 0 40 36" fill="none">
           <path d="M6.66683 18L33.3335 18" stroke="#BABCBC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M15 25.3214C15 25.3214 6.66667 19.9292 6.66667 17.9998C6.66667 16.0705 15 10.6786 15 10.6786" stroke="#BABCBC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -16,7 +16,7 @@
   </div>
   <div class="background-01" [style.background-image]="'url(' + project.imageUrl + ')'"></div>
 
-  <h1>{{ project.title }}</h1>
+  <h1 class="h1">{{ project.title }}</h1>
 
   <ul class="tags">
     <li *ngFor="let tag of project.tags" class="detail">{{ tag }}</li>
@@ -37,7 +37,7 @@
             <path d="M31.9839 31.6739L43.9353 19.7225M52.2229 11.6769L50.7708 6.46065C50.5033 5.60131 49.4693 5.25885 48.7723 5.82839C45.0026 8.90899 40.896 13.0584 44.2497 19.6033C51.0067 22.7542 54.8642 18.5051 57.8218 14.9337C58.4103 14.2231 58.0554 13.1549 57.1692 12.8986L52.2229 11.6769Z" stroke="#47C7AF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <div>
-            <h3>Objective</h3>
+            <h3 class="h3">Objective</h3>
             <p class="p-01">{{ project.objective }}</p>
           </div>
         </section>
@@ -48,7 +48,7 @@
             <path d="M16.1543 52.9151H58.1543L46.0966 33.6437C42.0909 27.2413 40.088 24.0401 37.1543 24.0401C34.2206 24.0401 32.2177 27.2413 28.212 33.6437L24.3663 39.7901" stroke="#47C7AF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <div>
-            <h3>Development Challenges</h3>
+            <h3 class="h3">Development Challenges</h3>
             <p class="p-01">{{ project.challenges }}</p>
           </div>
         </section>
@@ -59,7 +59,7 @@
             <path d="M31.268 10.8178C22.5917 6.39816 15.7638 8.98765 12.3592 11.633C11.7456 12.1099 11.4387 12.3483 11.1715 12.8943C10.9043 13.4403 10.9043 13.9487 10.9043 14.9657V39.2289C13.4498 36.3474 21.0861 31.8812 31.268 37.0677C40.3673 41.7029 48.1113 39.7814 51.7748 37.7788C52.283 37.5011 52.5371 37.362 52.7208 37.0525C52.9043 36.743 52.9043 36.407 52.9043 35.735V15.9766C52.9043 13.8017 52.9043 12.7143 52.3864 12.3204C51.8682 11.9265 50.6562 12.2625 48.2323 12.9346C44.0843 14.0847 38.0528 14.2741 31.268 10.8178Z" stroke="#47C7AF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <div>
-            <h3>Results</h3>
+            <h3 class="h3">Results</h3>
             <p class="p-01">{{ project.results }}</p>
           </div>
         </section>

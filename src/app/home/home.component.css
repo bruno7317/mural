@@ -74,3 +74,7 @@
   background: var(--cinza-600);
   height: 800px;
 }
+
+@media screen and (max-width = 1024px) {
+
+}

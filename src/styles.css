@@ -36,20 +36,13 @@
   letter-spacing: -2.4px;
 }
 
-h1 {
+.h1 {
   color: var(--verde-100);
-  font-family: Inter;
+  font-family: var(--main-font);
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: var(--main-font);
-  font-size: 1rem;
 }
 
 .h2-bold {
@@ -71,15 +64,6 @@ h1 {
   letter-spacing: var(--Headline-Large-Tracking);
 }
 
-h3 {
-  color: var(--cinza-500);
-  font-family: var(--main-font);
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 40px;
-}
-
 .highlight {
   color: var(--verde-100);
   font-family: var(--main-font);
@@ -91,7 +75,7 @@ h3 {
 
 .p-03 {
   color: var(--verde-100);
-  font-family: Inter;
+  font-family: var(--main-font);
   font-size: var(--sds-typography-subtitle-size-base);
   font-style: normal;
   font-weight: 500;
@@ -100,7 +84,7 @@ h3 {
 
 .p-02 {
   color: var(--branco-100);
-  font-family: Inter;
+  font-family: var(--main-font);
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -118,15 +102,6 @@ h3 {
   letter-spacing: var(--Headline-Large-Tracking);
 }
 
-.description {
-  color: var(--branco-100);
-  font-family: var(--main-font);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%;
-}
-
 .detail {
   color: var(--cinza-100);
   font-family: var(--main-font);
@@ -136,7 +111,7 @@ h3 {
   line-height: 120%;
 }
 
-a {
+.link {
   color: var(--cinza-100);
   font-family: var(--main-font);
   font-size: 18px;
@@ -146,7 +121,7 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+.link:hover {
   font-weight: 700;
   color: var(--verde-100);
 }

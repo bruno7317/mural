@@ -39,5 +39,11 @@
 }
 
 .description {
+  color: var(--branco-100);
+  font-family: var(--main-font);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
   width: 70px;
 }
