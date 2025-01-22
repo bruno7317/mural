@@ -15,14 +15,14 @@
         <img [src]="project.imageUrl" [alt]="project.title" />
         <div class="project-info">
           <h2 class="h2-bold project-title">{{ project.title }}</h2>
-          <p class="p-02">{{ project.description }}</p>
-        </div>
-        <div class="carousel-indicators">
-          <span
-            class="indicator"
-            *ngFor="let _ of projects; let i = index"
-            [class.active]="i === currentSlide">
-          </span>
+          <p class="p-02 project-description">{{ project.description }}</p>
+          <div class="carousel-indicators">
+            <span
+              class="indicator"
+              *ngFor="let _ of projects; let i = index"
+              [class.active]="i === currentSlide">
+            </span>
+          </div>
         </div>
       </div>
     </div>

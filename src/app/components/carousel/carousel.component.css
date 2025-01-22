@@ -53,6 +53,7 @@ img {
   padding: 60px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 20px;
 }
 
@@ -84,9 +85,6 @@ img {
 }
 
 .carousel-indicators {
-  position: absolute;
-  bottom: 80px;
-  right: 210px;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -101,4 +99,8 @@ img {
 
 .indicator.active {
   background-color: var(--verde-100);
+}
+
+.project-description {
+  overflow: hidden;
 }
