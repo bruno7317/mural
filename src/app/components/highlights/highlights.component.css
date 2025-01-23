@@ -8,6 +8,7 @@
   gap: 30px;
   width: var(--content-width);
   padding: 20px;
+  justify-content: space-between;
 }
 
 .project-card {
