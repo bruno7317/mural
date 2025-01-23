@@ -13,6 +13,7 @@
 }
 
 .about-content {
+  width: var(--content-width);
   display: flex;
   justify-content: space-between;
   align-items: center;
