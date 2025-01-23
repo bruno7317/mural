@@ -1,20 +1,16 @@
 .carousel-container {
-  position: relative;
-  width: 80%;
-  margin: auto;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: -200px;
   height: 550px;
+  margin-bottom: 40px;
 }
 
 .carousel-slides {
-  margin-top: 40px;
+  width: var(--content-width);
   position: relative;
-  width: 88%;
-  height: 90%;
+  height: 100%;
 }
 
 .slide {

@@ -1,13 +1,13 @@
 .highlights-container {
-  padding: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .project-cards {
   display: flex;
   gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
+  width: var(--content-width);
+  padding: 20px;
 }
 
 .project-card {
@@ -69,4 +69,5 @@
 
 .project-title {
   pointer-events: none;
+  text-align: center;
 }
