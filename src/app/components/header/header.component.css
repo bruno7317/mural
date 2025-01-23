@@ -1,31 +1,23 @@
 .container {
-  position: relative;
   opacity: 1;
+  z-index: 4;
   background: var(--cinza-600);
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100px;
-  z-index: 4;
 }
 
 .navbar {
+  position: relative;
   display: flex;
-  width: 100%;
+  width: var(--content-width);
   justify-content: space-between;
   align-items: center;
 }
 
 .navbar__links {
   display: flex;
-  align-items: center;
-}
-
-.navbar__links a {
-  display: flex;
-  width: 133px;
-  height: 40px;
-  align-items: center;
+  gap: 60px;
 }
 
 .navbar a:hover svg path {

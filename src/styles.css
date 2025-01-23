@@ -20,6 +20,7 @@
   --Headline-Large-Size: 32px;
   --Headline-Large-Line-Height: 40px;
   --Headline-Large-Tracking: 0px;
+  --content-width: 1400px;
 
   --sds-typography-subtitle-size-base: 32px;
 
@@ -68,13 +69,13 @@
   font-family: var(--main-font);
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 120%;
   text-decoration: none;
 }
 
 .link:hover {
-  font-weight: 700;
+  font-weight: 500;
   color: var(--verde-100);
 }
 
