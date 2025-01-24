@@ -2,22 +2,24 @@
   display: flex;
   height: 700px;
   justify-content: center;
+  align-items: center;
 }
 
 .picture {
   border-radius: 15px;
-  width: 500px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   overflow: hidden;
 }
 
 .about-content {
+  width: var(--content-width);
   display: flex;
-  width: 1200px;
   justify-content: space-between;
   align-items: center;
   gap: 90px;
+  height: 80%;
 }
 
 .about-content-text {
@@ -46,4 +48,13 @@
   font-weight: 400;
   line-height: 120%;
   width: 70px;
+}
+
+.highlight {
+  color: var(--verde-100);
+  font-family: var(--main-font);
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 120%;
 }

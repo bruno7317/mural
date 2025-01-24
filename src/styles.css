@@ -20,20 +20,11 @@
   --Headline-Large-Size: 32px;
   --Headline-Large-Line-Height: 40px;
   --Headline-Large-Tracking: 0px;
+  --content-width: 80%;
 
   --sds-typography-subtitle-size-base: 32px;
 
   --main-font: Inter;
-}
-
-.hero {
-  color: var(--branco-100);
-  font-family: var(--main-font);
-  font-size: 80px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 120%;
-  letter-spacing: -2.4px;
 }
 
 .h1 {
@@ -54,48 +45,10 @@
   line-height: 40px;
 }
 
-.h2-semibold {
-  color: var(--branco-100);
-  font-family: var(--main-font);
-  font-size: var(--Headline-Large-Size);
-  font-style: normal;
-  font-weight: 600;
-  line-height: var(--Headline-Large-Line-Height);
-  letter-spacing: var(--Headline-Large-Tracking);
-}
-
-.highlight {
-  color: var(--verde-100);
-  font-family: var(--main-font);
-  font-size: 80px;
-  font-style: normal;
-  font-weight: 200;
-  line-height: 120%;
-}
-
-.p-03 {
-  color: var(--verde-100);
-  font-family: var(--main-font);
-  font-size: var(--sds-typography-subtitle-size-base);
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
-}
-
 .p-02 {
   color: var(--branco-100);
   font-family: var(--main-font);
   font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: var(--Headline-Large-Tracking);
-}
-
-.p-01 {
-  color: var(--cinza-500);
-  font-family: var(--main-font);
-  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -116,13 +69,13 @@
   font-family: var(--main-font);
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 120%;
   text-decoration: none;
 }
 
 .link:hover {
-  font-weight: 700;
+  font-weight: 500;
   color: var(--verde-100);
 }
 
