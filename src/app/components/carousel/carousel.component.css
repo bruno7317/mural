@@ -100,3 +100,9 @@ img {
 .project-description {
   overflow: hidden;
 }
+
+@media (max-width: 412px) {
+  .carousel-container {
+    display: none;
+  }
+}

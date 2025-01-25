@@ -53,6 +53,13 @@ export class CarouselComponent implements OnInit, OnDestroy {
   }
 
   navigateToProject(projectId: string): void {
-    this.router.navigate([`/projects/${projectId}`]);
+    this.router.navigateByUrl(`/projects/${projectId}`);
+
+    setTimeout(() => {
+      const element = document.getElementById(`project-${projectId}`);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 0);
   }
 }
