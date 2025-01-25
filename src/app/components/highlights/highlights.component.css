@@ -72,3 +72,17 @@
   pointer-events: none;
   text-align: center;
 }
+
+@media (max-width: 412px) {
+  .project-cards {
+    flex-direction: column;
+  }
+
+  .project-card {
+    width: auto;
+  }
+
+  .overlay {
+    opacity: 1;
+  }
+}

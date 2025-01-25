@@ -58,3 +58,45 @@
   font-weight: 200;
   line-height: 120%;
 }
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .container {
+    height: 130vh;
+  }
+
+  .picture {
+    width: 100%;
+  }
+
+  .about-content-text {
+    width: 100%;
+  }
+
+  .experience {
+    justify-content: space-between;
+  }
+
+  .highlight {
+    font-size: 8rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
+    width: 11vw;
+  }
+}
+
+@media (max-width: 412px) {
+  .highlight {
+    font-size: 4rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    width: 18vw;
+  }
+}

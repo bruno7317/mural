@@ -23,3 +23,9 @@
 .navbar a:hover svg path {
   stroke: var(--verde-100);
 }
+
+@media (max-width: 412px) {
+  .navbar__links {
+    display: none;
+  }
+}

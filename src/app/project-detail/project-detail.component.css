@@ -134,6 +134,7 @@
   display: flex;
   list-style-type: none;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .tags li {
@@ -151,4 +152,18 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: var(--Headline-Large-Tracking);
+}
+
+@media (max-width: 768px) {
+  .project-detail-image {
+    display: none;
+  }
+
+  .project-sections {
+    width: 100%;
+  }
+
+  .navbar {
+    display: none;
+  }
 }
