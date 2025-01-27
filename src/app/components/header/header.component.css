@@ -24,7 +24,7 @@
   stroke: var(--verde-100);
 }
 
-@media (max-width: 412px) {
+@media (max-width: 620px) {
   .navbar__links {
     display: none;
   }

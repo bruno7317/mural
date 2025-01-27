@@ -90,7 +90,7 @@
   }
 }
 
-@media (max-width: 412px) {
+@media (max-width: 620px) {
   .highlight {
     font-size: 4rem;
   }

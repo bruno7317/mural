@@ -73,7 +73,7 @@
   text-align: center;
 }
 
-@media (max-width: 412px) {
+@media (max-width: 620px) {
   .project-cards {
     flex-direction: column;
   }

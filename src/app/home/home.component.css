@@ -107,7 +107,7 @@
   }
 }
 
-@media (max-width: 412px) {
+@media (max-width: 620px) {
   .macbook {
     display: none;
   }
