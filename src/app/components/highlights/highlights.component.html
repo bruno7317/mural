@@ -1,5 +1,6 @@
 <div class="highlights-container">
   <div class="project-cards">
+    <div class="highlights-title">My Work</div>
     <div *ngFor="let project of highlightedProjects" class="project-card" (click)="navigateToProject(project.id)">
       <img
         [src]="project.imageUrl"

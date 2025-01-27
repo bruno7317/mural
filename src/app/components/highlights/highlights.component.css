@@ -3,6 +3,16 @@
   justify-content: center;
 }
 
+.highlights-title {
+  display: none;
+  color: var(--branco-100);
+  font-family: var(--main-font);
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+
 .project-cards {
   display: flex;
   gap: 30px;
@@ -74,6 +84,10 @@
 }
 
 @media (max-width: 620px) {
+  .highlights-title {
+    display: block;
+  }
+
   .project-cards {
     flex-direction: column;
   }

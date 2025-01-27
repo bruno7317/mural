@@ -91,6 +91,11 @@
 }
 
 @media (max-width: 620px) {
+  .about-content {
+    height: auto;
+    gap: 10vh;
+  }
+
   .highlight {
     font-size: 4rem;
   }
@@ -98,5 +103,11 @@
   .description {
     font-size: 1rem;
     width: 18vw;
+  }
+
+  .picture {
+    border-radius: 50%;
+    width: 30vh;
+    height: 64vw;
   }
 }
