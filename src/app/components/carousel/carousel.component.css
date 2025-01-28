@@ -6,30 +6,27 @@
   height: 550px;
   margin-bottom: 40px;
   position: relative;
+  overflow: hidden;
 }
 
 .carousel-slides {
   width: var(--content-width);
   position: relative;
   height: 100%;
+  overflow: hidden;
+}
+
+.slides-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
 }
 
 .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
+  flex: 0 0 100%;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-}
-
-.slide.active {
-  opacity: 1;
-  visibility: visible;
-  background-color: var(--cinza-400);
-  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
 }
 
 .slide__content {
