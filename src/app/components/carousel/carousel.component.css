@@ -102,7 +102,57 @@ img {
 }
 
 @media (max-width: 620px) {
+  .carousel-highlights {
+    display: none;
+  }
+
   .carousel-container {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100vw;
+    width: 100%;
+  }
+
+  .nav-button {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+  }
+
+  .slide-image {
+    width: 100vw;
+    border-radius: 0;
+    margin-left: -10vw;
+  }
+
+  .slide__content {
+    position: relative;
+  }
+
+  .project-info {
+    width: 100vw;
+    height: 100vw;
+    left: -10vw;
+    bottom: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0;
+  }
+
+  .project-title {
+    margin: 10vw 5vw;
+    text-align: center;
+  }
+
+  .carousel-indicators {
+    margin-bottom: 3vw;
+  }
+
+  .carousel-slides {
+    width: 100%;
+  }
+
+  .p-02 {
     display: none;
   }
 }

@@ -35,48 +35,15 @@ export interface Project {
 export class ProjectService {
   private projects: Project[] = [
     {
-      id: 'project-2',
-      title: 'Intricate Team Leadership & Mentorship',
-      imageUrl: 'assets/images/intricate-team.png',
-      detailImageUrl: 'assets/images/intricate-team-detail.webp',
-      description:
-        'Led a team of six Dalhousie University co-op students working on a monolithic application encompassing payroll, employee management, and client-facing features. Employed pair programming to guide newcomers through ticket resolution, instilling confidence, accelerating their learning curve, and ensuring a steady flow of completed tasks. This collaborative approach helped maintain code quality and improved operational smoothness.',
-      objective:
-        'To streamline the development process, reduce the backlog of pending tickets, and cultivate a supportive, growth-oriented environment for junior developers.',
-      challenges:
-        'Ensuring that inexperienced team members quickly adapted to a complex codebase and established best practices without landmark features. Maintaining consistent progress despite shifting priorities and the eventual impact of the COVID-19 pandemic.',
-      results:
-        'Significantly reduced the backlog of tickets and introduced incremental improvements throughout the system. The team’s increased confidence and productivity enhanced the stability and maintainability of the application, reflecting positively on both client satisfaction and internal morale.',
-      tags: [
-        Tag.Java,
-        Tag.SpringFramework,
-        Tag.Git,
-        Tag.Mentorship,
-        Tag.Agile
-      ]
-    },
-    {
-      id: 'project-5',
-      title: 'Showcasing Full-Stack & Serverless Proficiency',
-      imageUrl: 'assets/images/portfolio.png',
-      detailImageUrl: 'assets/images/portfolio-detail.png',
-      description:
-        'Developed a serverless Portfolio application to highlight a broad range of skills, from front-end design to backend integration with AWS resources. This project served as both a learning ground and a demonstrable solution, featuring a fully responsive Angular-based UI and a dynamic AWS-based backend leveraging Lambda, DynamoDB, and API Gateway.',
-      objective:
-        'To create a self-contained, scalable, and easily maintainable platform for showcasing professional experience, technical aptitude, and creativity. The goal was to demonstrate adaptability, problem-solving, and end-to-end application development capabilities.',
-      challenges:
-        'Adapting quickly to unfamiliar technologies in AWS, learning new front-end and architectural patterns on the fly, and maintaining code quality while integrating multiple services. Managing project timelines, prioritizing features, and ensuring seamless communication between the front end and backend components.',
-      results:
-        'Successfully launched a fully functional, serverless Portfolio application that provided a tangible platform for demonstrating multifaceted skills. By overcoming technical hurdles and mastering new AWS services, achieved a robust solution that not only showcased proficiency but also reinforced confidence in tackling complex full-stack projects.',
-      tags: [
-        Tag.Angular,
-        Tag.TypeScript,
-        Tag.AWS,
-        Tag.AWSLambda,
-        Tag.DynamoDB,
-        Tag.APIGateway,
-        Tag.Serverless
-      ]
+      id: '',
+      title: 'My Work',
+      imageUrl: 'assets/images/my-work.png',
+      detailImageUrl: '',
+      description: '',
+      objective: '',
+      challenges: '',
+      results: '',
+      tags: []
     },
     {
       id: 'project-4',
@@ -130,6 +97,50 @@ export class ProjectService {
         'Delivered a refined, fully integrated solution that became instrumental for Vancouver SkyTrain. The system facilitated data-driven maintenance decisions, likely increasing train availability and reliability. Post-launch, coordinated live testing and monitoring with clients in Vancouver ensured smooth adoption and sustained operational benefits.',
       tags: [
         Tag.Highlight
+      ]
+    },
+    {
+      id: 'project-2',
+      title: 'Intricate Team Leadership & Mentorship',
+      imageUrl: 'assets/images/intricate-team.png',
+      detailImageUrl: 'assets/images/intricate-team-detail.webp',
+      description:
+        'Led a team of six Dalhousie University co-op students working on a monolithic application encompassing payroll, employee management, and client-facing features. Employed pair programming to guide newcomers through ticket resolution, instilling confidence, accelerating their learning curve, and ensuring a steady flow of completed tasks. This collaborative approach helped maintain code quality and improved operational smoothness.',
+      objective:
+        'To streamline the development process, reduce the backlog of pending tickets, and cultivate a supportive, growth-oriented environment for junior developers.',
+      challenges:
+        'Ensuring that inexperienced team members quickly adapted to a complex codebase and established best practices without landmark features. Maintaining consistent progress despite shifting priorities and the eventual impact of the COVID-19 pandemic.',
+      results:
+        'Significantly reduced the backlog of tickets and introduced incremental improvements throughout the system. The team’s increased confidence and productivity enhanced the stability and maintainability of the application, reflecting positively on both client satisfaction and internal morale.',
+      tags: [
+        Tag.Java,
+        Tag.SpringFramework,
+        Tag.Git,
+        Tag.Mentorship,
+        Tag.Agile
+      ]
+    },
+    {
+      id: 'project-5',
+      title: 'Showcasing Full-Stack & Serverless Proficiency',
+      imageUrl: 'assets/images/portfolio.png',
+      detailImageUrl: 'assets/images/portfolio-detail.png',
+      description:
+        'Developed a serverless Portfolio application to highlight a broad range of skills, from front-end design to backend integration with AWS resources. This project served as both a learning ground and a demonstrable solution, featuring a fully responsive Angular-based UI and a dynamic AWS-based backend leveraging Lambda, DynamoDB, and API Gateway.',
+      objective:
+        'To create a self-contained, scalable, and easily maintainable platform for showcasing professional experience, technical aptitude, and creativity. The goal was to demonstrate adaptability, problem-solving, and end-to-end application development capabilities.',
+      challenges:
+        'Adapting quickly to unfamiliar technologies in AWS, learning new front-end and architectural patterns on the fly, and maintaining code quality while integrating multiple services. Managing project timelines, prioritizing features, and ensuring seamless communication between the front end and backend components.',
+      results:
+        'Successfully launched a fully functional, serverless Portfolio application that provided a tangible platform for demonstrating multifaceted skills. By overcoming technical hurdles and mastering new AWS services, achieved a robust solution that not only showcased proficiency but also reinforced confidence in tackling complex full-stack projects.',
+      tags: [
+        Tag.Angular,
+        Tag.TypeScript,
+        Tag.AWS,
+        Tag.AWSLambda,
+        Tag.DynamoDB,
+        Tag.APIGateway,
+        Tag.Serverless
       ]
     }
   ];

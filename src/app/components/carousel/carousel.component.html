@@ -12,7 +12,7 @@
       *ngFor="let project of projects; let i = index"
       [class.active]="i === currentSlide">
       <div class="slide__content" (click)="navigateToProject(project.id)">
-        <img [src]="project.imageUrl" [alt]="project.title" />
+        <img [src]="project.imageUrl" [alt]="project.title" class="slide-image" />
         <div class="project-info">
           <h2 class="h2-bold project-title">{{ project.title }}</h2>
           <p class="p-02 project-description">{{ project.description }}</p>
@@ -35,6 +35,6 @@
     </svg>
   </button>
 </div>
-<div>
+<div class="carousel-highlights">
   <app-highlights></app-highlights>
 </div>
