@@ -5,6 +5,7 @@
   margin-top: -200px;
   height: 550px;
   margin-bottom: 40px;
+  position: relative;
 }
 
 .carousel-slides {
@@ -46,15 +47,14 @@ img {
 
 .project-info {
   width: 50%;
-  padding: 60px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 20px;
 }
 
 .project-title {
   color: var(--verde-100);
+  margin: 3vw 1vw 0 3vw;
 }
 
 .nav-button {
@@ -84,6 +84,11 @@ img {
   display: flex;
   justify-content: center;
   gap: 10px;
+  position: absolute;
+  bottom: 20px;
+  left: 69vw;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
 .indicator {
@@ -99,6 +104,7 @@ img {
 
 .project-description {
   overflow: hidden;
+  margin: 0 3vw 3vw 3vw;
 }
 
 @media (max-width: 620px) {
@@ -146,6 +152,7 @@ img {
 
   .carousel-indicators {
     margin-bottom: 3vw;
+    left: 50vw;
   }
 
   .carousel-slides {
