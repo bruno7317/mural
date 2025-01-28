@@ -83,6 +83,7 @@ img {
 .carousel-indicators {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
   position: absolute;
   bottom: 20px;
@@ -100,11 +101,13 @@ img {
 
 .indicator.active {
   background-color: var(--verde-100);
+  width: 18px;
+  height: 18px;
 }
 
 .project-description {
   overflow: hidden;
-  margin: 0 3vw 3vw 3vw;
+  margin: 0 3vw 7vh 3vw;
 }
 
 @media (max-width: 620px) {
