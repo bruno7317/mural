@@ -26,7 +26,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
   startAutoSlide(): void {
     this.clearAutoSlide();
     this.intervalId = setInterval(() => {
-      this.nextSlide();
+      // this.nextSlide();
     }, 5000);
   }
 
@@ -53,6 +53,10 @@ export class CarouselComponent implements OnInit, OnDestroy {
   }
 
   navigateToProject(projectId: string): void {
+    if (!projectId || projectId.trim() === '') {
+      return;
+    }
+
     this.router.navigateByUrl(`/projects/${projectId}`);
 
     setTimeout(() => {
