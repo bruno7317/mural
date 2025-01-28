@@ -116,7 +116,7 @@ img {
     margin-top: 0;
     margin-bottom: 0;
     height: 100vw;
-    width: 100%;
+    width: 100vw;
   }
 
   .nav-button {
@@ -128,7 +128,15 @@ img {
   .slide-image {
     width: 100vw;
     border-radius: 0;
-    margin-left: -10vw;
+    margin-left: 0;
+  }
+
+  .nav-button.right {
+    right: 20vw;
+  }
+
+  .nav-button.left {
+    left: 20vw;
   }
 
   .slide__content {
@@ -138,7 +146,7 @@ img {
   .project-info {
     width: 100vw;
     height: 100vw;
-    left: -10vw;
+    left: 0;
     bottom: 0;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
@@ -150,13 +158,18 @@ img {
     text-align: center;
   }
 
+  .slide {
+    flex: 0 0 100%;
+  }
+
   .carousel-indicators {
     margin-bottom: 3vw;
     left: 50vw;
   }
 
   .carousel-slides {
-    width: 100%;
+    width: 100vw;
+    overflow: visible;
   }
 
   .p-02 {
