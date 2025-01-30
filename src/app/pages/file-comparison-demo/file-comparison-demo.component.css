@@ -29,6 +29,11 @@ tr.new {
 
 tr.changed {
   background-color: #fff9e8;
+  cursor: pointer;
+}
+
+tr.changed:hover {
+  background-color: #ffefc5;
 }
 
 tr.removed {
@@ -105,6 +110,17 @@ tr.removed {
 
 .new-value {
   color: #5cb85c;
+}
+
+.chevron-cell {
+  width: 40px;
+  text-align: center;
+}
+
+.chevron-cell i {
+  font-size: 1.5rem;
+  color: #666;
+  transition: transform 0.2s ease-in-out;
 }
 
 @media (max-width: 620px) {

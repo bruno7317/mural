@@ -14,13 +14,13 @@
         <th>Owner</th>
         <th>Type</th>
         <th>Status</th>
-        <th>Details</th>
+        <th></th>
       </tr>
     </thead>
 
     <tbody>
       <ng-container *ngFor="let pet of petEntries">
-        <tr [ngClass]="pet.status.toLowerCase()">
+        <tr [ngClass]="pet.status.toLowerCase()" (click)="toggleRowExpansion(pet)">
           <td data-label="ID">{{ pet.id }}</td>
           <td data-label="Name">{{ pet.name }}</td>
           <td data-label="Owner">{{ pet.owner }}</td>
@@ -49,16 +49,13 @@
             ></i>
           </td>
 
-          <td class="toggle-cell">
-            <button
+          <td class="chevron-cell">
+            <i
               *ngIf="pet.status === 'Changed'"
-              class="expand-btn"
-              (click)="toggleRowExpansion(pet)"
-              [attr.aria-expanded]="pet.expanded ? 'true' : 'false'"
-              [attr.aria-controls]="'details-' + pet.id"
-            >
-              {{ pet.expanded ? '▼ Hide' : '▶ Show' }}
-            </button>
+              class="mdi"
+              [ngClass]="pet.expanded ? 'mdi-chevron-down' : 'mdi-chevron-right'"
+              aria-hidden="true"
+            ></i>
           </td>
         </tr>
 
