@@ -9,7 +9,7 @@
   <table class="comparison-table">
     <thead>
       <tr>
-        <th (click)="sortPetsBy('id', $event)" class="comparison-table-header">
+        <th (click)="sortPetsBy('id', $event)" class="comparison-table-header mobile-hide">
           ID
           <span *ngIf="sortColumn === 'id'">
             <i class="mdi" [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'"></i>
@@ -27,7 +27,7 @@
             <i class="mdi" [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'"></i>
           </span>
         </th>
-        <th (click)="sortPetsBy('type', $event)" class="comparison-table-header">
+        <th (click)="sortPetsBy('type', $event)" class="comparison-table-header mobile-hide">
           Type
           <span *ngIf="sortColumn === 'type'">
             <i class="mdi" [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'"></i>
@@ -46,10 +46,10 @@
     <tbody>
       <ng-container *ngFor="let pet of petEntries">
         <tr [ngClass]="pet.status.toLowerCase()" (click)="toggleRowExpansion(pet)">
-          <td data-label="ID" class="comparison-table-row">{{ pet.id }}</td>
+          <td data-label="ID" class="comparison-table-row mobile-hide">{{ pet.id }}</td>
           <td data-label="Name" class="comparison-table-row">{{ pet.name }}</td>
           <td data-label="Owner" class="comparison-table-row">{{ pet.owner }}</td>
-          <td data-label="Type" class="comparison-table-row">{{ pet.type }}</td>
+          <td data-label="Type" class="comparison-table-row mobile-hide">{{ pet.type }}</td>
 
           <td data-label="Status" class="status-cell comparison-table-row">
             <i *ngIf="pet.status === 'New'" class="mdi mdi-plus-circle status-icon new-icon" [attr.title]="pet.status" aria-hidden="true"></i>
