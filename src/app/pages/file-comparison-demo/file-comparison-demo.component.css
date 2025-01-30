@@ -17,6 +17,14 @@ h1 {
   text-align: left;
 }
 
+.comparison-table th {
+  cursor: pointer;
+}
+
+.comparison-table th:hover {
+  background-color: #a7a7a7;
+}
+
 .comparison-table th,
 .comparison-table td {
   padding: 10px;

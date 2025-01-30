@@ -9,18 +9,61 @@
   <table class="comparison-table">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>Pet Name</th>
-        <th>Owner</th>
-        <th>Type</th>
-        <th>Status</th>
+        <th (click)="sortPetsBy('id', $event)">
+          ID
+          <span *ngIf="sortColumn === 'id'">
+            <i
+              class="mdi"
+              [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'">
+            </i>
+          </span>
+        </th>
+        <th (click)="sortPetsBy('name', $event)">
+          Pet Name
+          <span *ngIf="sortColumn === 'name'">
+            <i
+              class="mdi"
+              [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'">
+            </i>
+          </span>
+        </th>
+        <th (click)="sortPetsBy('owner', $event)">
+          Owner
+          <span *ngIf="sortColumn === 'owner'">
+            <i
+              class="mdi"
+              [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'">
+            </i>
+          </span>
+        </th>
+        <th (click)="sortPetsBy('type', $event)">
+          Type
+          <span *ngIf="sortColumn === 'type'">
+            <i
+              class="mdi"
+              [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'">
+            </i>
+          </span>
+        </th>
+        <th (click)="sortPetsBy('status', $event)">
+          Status
+          <span *ngIf="sortColumn === 'status'">
+            <i
+              class="mdi"
+              [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'">
+            </i>
+          </span>
+        </th>
         <th></th>
       </tr>
     </thead>
 
     <tbody>
       <ng-container *ngFor="let pet of petEntries">
-        <tr [ngClass]="pet.status.toLowerCase()" (click)="toggleRowExpansion(pet)">
+        <tr
+          [ngClass]="pet.status.toLowerCase()"
+          (click)="toggleRowExpansion(pet)"
+        >
           <td data-label="ID">{{ pet.id }}</td>
           <td data-label="Name">{{ pet.name }}</td>
           <td data-label="Owner">{{ pet.owner }}</td>
@@ -33,14 +76,12 @@
               [attr.title]="pet.status"
               aria-hidden="true"
             ></i>
-
             <i
               *ngIf="pet.status === 'Changed'"
               class="mdi mdi-pencil-circle status-icon changed-icon"
               [attr.title]="pet.status"
               aria-hidden="true"
             ></i>
-
             <i
               *ngIf="pet.status === 'Removed'"
               class="mdi mdi-delete-circle status-icon removed-icon"

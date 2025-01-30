@@ -23,6 +23,9 @@ interface PetEntry {
 })
 export class FileComparisonDemoComponent {
 
+  sortColumn: string = '';
+  sortDirection: 'asc' | 'desc' = 'asc';
+
   petEntries: PetEntry[] = [
     { id: 1, name: 'Bella',  owner: 'Alice',   type: 'cat',  status: 'New' },
     {
@@ -68,5 +71,37 @@ export class FileComparisonDemoComponent {
     if (entry.status === 'Changed') {
       entry.expanded = !entry.expanded;
     }
+  }
+
+  sortPetsBy(column: keyof PetEntry, event: MouseEvent): void {
+    // Avoid also triggering row-expansion when clicking a header
+    event.stopPropagation();
+
+    if (this.sortColumn === column) {
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortColumn = column;
+      this.sortDirection = 'asc';
+    }
+
+    this.petEntries.sort((a, b) => this.compareValues(a, b, column));
+  }
+
+  private compareValues(a: PetEntry, b: PetEntry, column: keyof PetEntry): number {
+    const directionMultiplier = this.sortDirection === 'asc' ? 1 : -1;
+
+    let valueA = a[column];
+    let valueB = b[column];
+
+    if (column === 'id') {
+      return (Number(valueA) - Number(valueB)) * directionMultiplier;
+    }
+
+    const strA = String(valueA).toLowerCase();
+    const strB = String(valueB).toLowerCase();
+
+    if (strA < strB) return -1 * directionMultiplier;
+    if (strA > strB) return 1 * directionMultiplier;
+    return 0;
   }
 }
