@@ -12,46 +12,31 @@
         <th (click)="sortPetsBy('id', $event)">
           ID
           <span *ngIf="sortColumn === 'id'">
-            <i
-              class="mdi"
-              [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'">
-            </i>
+            <i class="mdi" [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'"></i>
           </span>
         </th>
         <th (click)="sortPetsBy('name', $event)">
           Pet Name
           <span *ngIf="sortColumn === 'name'">
-            <i
-              class="mdi"
-              [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'">
-            </i>
+            <i class="mdi" [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'"></i>
           </span>
         </th>
         <th (click)="sortPetsBy('owner', $event)">
           Owner
           <span *ngIf="sortColumn === 'owner'">
-            <i
-              class="mdi"
-              [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'">
-            </i>
+            <i class="mdi" [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'"></i>
           </span>
         </th>
         <th (click)="sortPetsBy('type', $event)">
           Type
           <span *ngIf="sortColumn === 'type'">
-            <i
-              class="mdi"
-              [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'">
-            </i>
+            <i class="mdi" [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'"></i>
           </span>
         </th>
         <th (click)="sortPetsBy('status', $event)">
           Status
           <span *ngIf="sortColumn === 'status'">
-            <i
-              class="mdi"
-              [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'">
-            </i>
+            <i class="mdi" [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'"></i>
           </span>
         </th>
         <th></th>
@@ -60,52 +45,24 @@
 
     <tbody>
       <ng-container *ngFor="let pet of petEntries">
-        <tr
-          [ngClass]="pet.status.toLowerCase()"
-          (click)="toggleRowExpansion(pet)"
-        >
+        <tr [ngClass]="pet.status.toLowerCase()" (click)="toggleRowExpansion(pet)">
           <td data-label="ID">{{ pet.id }}</td>
           <td data-label="Name">{{ pet.name }}</td>
           <td data-label="Owner">{{ pet.owner }}</td>
           <td data-label="Type">{{ pet.type }}</td>
 
           <td data-label="Status" class="status-cell">
-            <i
-              *ngIf="pet.status === 'New'"
-              class="mdi mdi-plus-circle status-icon new-icon"
-              [attr.title]="pet.status"
-              aria-hidden="true"
-            ></i>
-            <i
-              *ngIf="pet.status === 'Changed'"
-              class="mdi mdi-pencil-circle status-icon changed-icon"
-              [attr.title]="pet.status"
-              aria-hidden="true"
-            ></i>
-            <i
-              *ngIf="pet.status === 'Removed'"
-              class="mdi mdi-delete-circle status-icon removed-icon"
-              [attr.title]="pet.status"
-              aria-hidden="true"
-            ></i>
+            <i *ngIf="pet.status === 'New'" class="mdi mdi-plus-circle status-icon new-icon" [attr.title]="pet.status" aria-hidden="true"></i>
+            <i *ngIf="pet.status === 'Changed'" class="mdi mdi-pencil-circle status-icon changed-icon" [attr.title]="pet.status" aria-hidden="true"></i>
+            <i *ngIf="pet.status === 'Removed'" class="mdi mdi-delete-circle status-icon removed-icon" [attr.title]="pet.status" aria-hidden="true"></i>
           </td>
 
           <td class="chevron-cell">
-            <i
-              *ngIf="pet.status === 'Changed'"
-              class="mdi"
-              [ngClass]="pet.expanded ? 'mdi-chevron-down' : 'mdi-chevron-right'"
-              aria-hidden="true"
-            ></i>
+            <i *ngIf="pet.status === 'Changed'" class="mdi" [ngClass]="pet.expanded ? 'mdi-chevron-down' : 'mdi-chevron-right'" aria-hidden="true"></i>
           </td>
         </tr>
 
-        <tr
-          *ngIf="pet.expanded"
-          class="details-row"
-          [attr.id]="'details-' + pet.id"
-          aria-live="polite"
-        >
+        <tr [@expandCollapse]="pet.expanded ? 'expanded' : 'collapsed'" class="details-row" [attr.id]="'details-' + pet.id" aria-live="polite">
           <td colspan="6">
             <table class="details-table">
               <thead>

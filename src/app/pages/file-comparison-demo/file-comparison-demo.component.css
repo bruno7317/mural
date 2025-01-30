@@ -1,5 +1,5 @@
 .container {
-  max-width: 900px;
+  max-width: var(--content-width);
   margin: 20px auto;
   padding: 0 20px;
   font-family: var(--main-font);
@@ -19,7 +19,7 @@ h1 {
 
 .comparison-table th {
   cursor: pointer;
-  min-width: 10vw;
+  min-width: 7vw;
 }
 
 .comparison-table th:hover {
@@ -107,6 +107,11 @@ tr.removed {
 
 .expand-btn:hover {
   text-decoration: underline;
+}
+
+.details-row {
+  display: block;
+  overflow: hidden;
 }
 
 .details-row .details-container {
