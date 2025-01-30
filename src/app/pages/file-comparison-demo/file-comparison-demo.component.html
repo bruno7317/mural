@@ -107,18 +107,22 @@
           aria-live="polite"
         >
           <td colspan="6">
-            <div class="details-container">
-              <h3>Changed Attributes</h3>
-              <ul>
-                <li *ngFor="let attr of pet.changedAttributes">
-                  <strong>{{ attr.attribute }}:</strong>
-                  Changed from
-                  <span class="old-value">"{{ attr.oldValue }}"</span>
-                  to
-                  <span class="new-value">"{{ attr.newValue }}"</span>
-                </li>
-              </ul>
-            </div>
+            <table class="details-table">
+              <thead>
+                <tr>
+                  <th>Attribute</th>
+                  <th>From</th>
+                  <th>To</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let attr of pet.changedAttributes">
+                  <td>{{ attr.attribute }}</td>
+                  <td class="old-value">{{ attr.oldValue }}</td>
+                  <td class="new-value">{{ attr.newValue }}</td>
+                </tr>
+              </tbody>
+            </table>
           </td>
         </tr>
       </ng-container>

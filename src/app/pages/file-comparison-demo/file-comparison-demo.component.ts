@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 interface ChangedAttribute {
   attribute: string;
@@ -19,7 +20,14 @@ interface PetEntry {
 @Component({
   selector: 'app-file-comparison-demo',
   templateUrl: './file-comparison-demo.component.html',
-  styleUrls: ['./file-comparison-demo.component.css']
+  styleUrls: ['./file-comparison-demo.component.css'],
+  animations: [
+    trigger('expandCollapse', [
+      state('collapsed', style({ height: '0px', overflow: 'hidden', opacity: 0 })),
+      state('expanded', style({ height: '*', opacity: 1 })),
+      transition('collapsed <=> expanded', animate('300ms ease-in-out'))
+    ])
+  ]
 })
 export class FileComparisonDemoComponent {
 
@@ -74,32 +82,25 @@ export class FileComparisonDemoComponent {
   }
 
   sortPetsBy(column: keyof PetEntry, event: MouseEvent): void {
-    // Avoid also triggering row-expansion when clicking a header
     event.stopPropagation();
-
     if (this.sortColumn === column) {
       this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
     } else {
       this.sortColumn = column;
       this.sortDirection = 'asc';
     }
-
     this.petEntries.sort((a, b) => this.compareValues(a, b, column));
   }
 
   private compareValues(a: PetEntry, b: PetEntry, column: keyof PetEntry): number {
     const directionMultiplier = this.sortDirection === 'asc' ? 1 : -1;
-
     let valueA = a[column];
     let valueB = b[column];
-
     if (column === 'id') {
       return (Number(valueA) - Number(valueB)) * directionMultiplier;
     }
-
     const strA = String(valueA).toLowerCase();
     const strB = String(valueB).toLowerCase();
-
     if (strA < strB) return -1 * directionMultiplier;
     if (strA > strB) return 1 * directionMultiplier;
     return 0;

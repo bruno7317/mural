@@ -17,6 +17,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { HighlightsComponent } from './components/highlights/highlights.component';
 import { NotificationBannerComponent } from './notification-banner/notification-banner.component';
 import { FileComparisonDemoComponent } from './pages/file-comparison-demo/file-comparison-demo.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FileComparisonDemoComponent } from './pages/file-comparison-demo/file-c
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())]
 })

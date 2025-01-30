@@ -19,6 +19,7 @@ h1 {
 
 .comparison-table th {
   cursor: pointer;
+  min-width: 10vw;
 }
 
 .comparison-table th:hover {
@@ -51,6 +52,7 @@ tr.removed {
 .status-cell {
   width: 120px;
 }
+
 .status-badge {
   display: inline-block;
   padding: 4px 8px;
@@ -58,13 +60,16 @@ tr.removed {
   font-weight: bold;
   color: #fff;
 }
+
 .status-badge.new {
   background-color: #28a745;
 }
+
 .status-badge.changed {
   background-color: #ffc107;
   color: #333;
 }
+
 .status-badge.removed {
   background-color: #dc3545;
 }
@@ -78,9 +83,11 @@ tr.removed {
 .new-icon {
   color: green;
 }
+
 .changed-icon {
   color: orange;
 }
+
 .removed-icon {
   color: red;
 }
@@ -89,6 +96,7 @@ tr.removed {
   text-align: center;
   width: 80px;
 }
+
 .expand-btn {
   background: none;
   border: none;
@@ -96,6 +104,7 @@ tr.removed {
   cursor: pointer;
   font-weight: bold;
 }
+
 .expand-btn:hover {
   text-decoration: underline;
 }
@@ -107,9 +116,25 @@ tr.removed {
   border-radius: 5px;
 }
 
-.details-row h3 {
+.details-container h3 {
   margin-top: 0;
   margin-bottom: 12px;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.details-table th, .details-table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.details-table th {
+  background-color: #eaeaea;
 }
 
 .old-value {
