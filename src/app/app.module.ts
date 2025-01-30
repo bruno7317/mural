@@ -16,6 +16,7 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { HighlightsComponent } from './components/highlights/highlights.component';
 import { NotificationBannerComponent } from './notification-banner/notification-banner.component';
+import { FileComparisonDemoComponent } from './pages/file-comparison-demo/file-comparison-demo.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NotificationBannerComponent } from './notification-banner/notification-
     CarouselComponent,
     HighlightsComponent,
     NotificationBannerComponent,
+    FileComparisonDemoComponent,
   ],
   bootstrap: [AppComponent],
   imports: [

@@ -1,0 +1,89 @@
+<div class="container">
+  <h1>File Comparison Demo: Veterinarian Pet Updates</h1>
+  <p>
+    This table represents changes in our pet database. Rows can be
+    <strong>New</strong>, <strong>Changed</strong>, or <strong>Removed</strong>.
+    Expand changed rows to see updated attributes.
+  </p>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Pet Name</th>
+        <th>Owner</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <ng-container *ngFor="let pet of petEntries">
+        <tr [ngClass]="pet.status.toLowerCase()">
+          <td data-label="ID">{{ pet.id }}</td>
+          <td data-label="Name">{{ pet.name }}</td>
+          <td data-label="Owner">{{ pet.owner }}</td>
+          <td data-label="Type">{{ pet.type }}</td>
+
+          <td data-label="Status" class="status-cell">
+            <i
+              *ngIf="pet.status === 'New'"
+              class="mdi mdi-plus-circle status-icon new-icon"
+              [attr.title]="pet.status"
+              aria-hidden="true"
+            ></i>
+
+            <i
+              *ngIf="pet.status === 'Changed'"
+              class="mdi mdi-pencil-circle status-icon changed-icon"
+              [attr.title]="pet.status"
+              aria-hidden="true"
+            ></i>
+
+            <i
+              *ngIf="pet.status === 'Removed'"
+              class="mdi mdi-delete-circle status-icon removed-icon"
+              [attr.title]="pet.status"
+              aria-hidden="true"
+            ></i>
+          </td>
+
+          <td class="toggle-cell">
+            <button
+              *ngIf="pet.status === 'Changed'"
+              class="expand-btn"
+              (click)="toggleRowExpansion(pet)"
+              [attr.aria-expanded]="pet.expanded ? 'true' : 'false'"
+              [attr.aria-controls]="'details-' + pet.id"
+            >
+              {{ pet.expanded ? '▼ Hide' : '▶ Show' }}
+            </button>
+          </td>
+        </tr>
+
+        <tr
+          *ngIf="pet.expanded"
+          class="details-row"
+          [attr.id]="'details-' + pet.id"
+          aria-live="polite"
+        >
+          <td colspan="6">
+            <div class="details-container">
+              <h3>Changed Attributes</h3>
+              <ul>
+                <li *ngFor="let attr of pet.changedAttributes">
+                  <strong>{{ attr.attribute }}:</strong>
+                  Changed from
+                  <span class="old-value">"{{ attr.oldValue }}"</span>
+                  to
+                  <span class="new-value">"{{ attr.newValue }}"</span>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

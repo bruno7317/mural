@@ -27,6 +27,7 @@ export interface Project {
   challenges: string;
   results: string;
   tags?: Tag[];
+  demoUrl?: string;
 }
 
 @Injectable({
@@ -62,7 +63,8 @@ export class ProjectService {
         Tag.Git,
         Tag.Agile,
         Tag.Highlight
-      ]
+      ],
+      demoUrl: '/file-comparison-demo'
     },
     {
       id: 'project-1',

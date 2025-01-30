@@ -154,6 +154,30 @@
   letter-spacing: var(--Headline-Large-Tracking);
 }
 
+.demo-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 50px 0;
+  border: 2px solid var(--verde-100);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--verde-100);
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.demo-link svg {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.demo-link:hover {
+  background-color: #47C7AF;
+  color: #ffffff;
+}
+
 @media (max-width: 768px) {
   .project-detail-image {
     display: none;

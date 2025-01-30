@@ -1,0 +1,147 @@
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 20px;
+  font-family: var(--main-font);
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr.new {
+  background-color: #e8faf7;
+}
+
+tr.changed {
+  background-color: #fff9e8;
+}
+
+tr.removed {
+  background-color: #fdeaea;
+}
+
+.status-cell {
+  width: 120px;
+}
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #fff;
+}
+.status-badge.new {
+  background-color: #28a745;
+}
+.status-badge.changed {
+  background-color: #ffc107;
+  color: #333;
+}
+.status-badge.removed {
+  background-color: #dc3545;
+}
+
+.status-icon {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.new-icon {
+  color: green;
+}
+.changed-icon {
+  color: orange;
+}
+.removed-icon {
+  color: red;
+}
+
+.toggle-cell {
+  text-align: center;
+  width: 80px;
+}
+.expand-btn {
+  background: none;
+  border: none;
+  color: #007acc;
+  cursor: pointer;
+  font-weight: bold;
+}
+.expand-btn:hover {
+  text-decoration: underline;
+}
+
+.details-row .details-container {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.details-row h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.old-value {
+  color: #d9534f;
+}
+
+.new-value {
+  color: #5cb85c;
+}
+
+@media (max-width: 620px) {
+  .comparison-table thead {
+    display: none;
+  }
+
+  .comparison-table,
+  .comparison-table tbody,
+  .comparison-table tr,
+  .comparison-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .comparison-table tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+  }
+
+  .comparison-table td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+    border: none;
+    border-bottom: 1px dotted #ccc;
+  }
+
+  .comparison-table td::before {
+    content: attr(data-label) ": ";
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+  }
+
+  .toggle-cell {
+    text-align: left;
+    padding-left: 50%;
+  }
+}
