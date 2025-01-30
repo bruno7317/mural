@@ -5,9 +5,23 @@
   font-family: var(--main-font);
 }
 
+.p-01 {
+  color: var(--cinza-500);
+  font-family: var(--main-font);
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: var(--Headline-Large-Tracking);
+}
+
 h1 {
-  margin-bottom: 10px;
-  color: #333;
+  color: var(--cinza-400);
+  font-family: var(--main-font);
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
 }
 
 .comparison-table {
@@ -27,7 +41,7 @@ h1 {
 }
 
 .comparison-table th,
-.comparison-table td {
+.comparison-table-row {
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
@@ -109,8 +123,7 @@ tr.removed {
   text-decoration: underline;
 }
 
-.details-row {
-  display: block;
+.details-content {
   overflow: hidden;
 }
 
@@ -129,7 +142,6 @@ tr.removed {
 .details-table {
   width: 100%;
   border-collapse: collapse;
-  margin: -10px 0;
 }
 
 .details-table th, .details-table td {

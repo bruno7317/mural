@@ -35,7 +35,7 @@ export class FileComparisonDemoComponent {
   sortDirection: 'asc' | 'desc' = 'asc';
 
   petEntries: PetEntry[] = [
-    { id: 1, name: 'Bella',  owner: 'Alice',   type: 'cat',  status: 'New' },
+    { id: 1, name: 'Bella', owner: 'Alice', type: 'cat', status: 'New' },
     {
       id: 2,
       name: 'Max',
@@ -43,10 +43,12 @@ export class FileComparisonDemoComponent {
       type: 'dog',
       status: 'Changed',
       changedAttributes: [
-        { attribute: 'Name', oldValue: 'Maximus', newValue: 'Max' }
+        { attribute: 'Name', oldValue: 'Maximus', newValue: 'Max' },
+        { attribute: 'Owner', oldValue: 'Brian', newValue: 'Bob' },
+        { attribute: 'Breed', oldValue: 'Unknown', newValue: 'Bulldog' }
       ]
     },
-    { id: 3, name: 'Charlie', owner: 'Carol',  type: 'bird', status: 'Removed' },
+    { id: 3, name: 'Charlie', owner: 'Carol', type: 'bird', status: 'Removed' },
     {
       id: 4,
       name: 'Luna',
@@ -54,11 +56,13 @@ export class FileComparisonDemoComponent {
       type: 'cat',
       status: 'Changed',
       changedAttributes: [
-        { attribute: 'Owner', oldValue: 'Daniel', newValue: 'Dave' }
+        { attribute: 'Owner', oldValue: 'Daniel', newValue: 'Dave' },
+        { attribute: 'Color', oldValue: 'Gray', newValue: 'White' },
+        { attribute: 'Vaccinated', oldValue: 'No', newValue: 'Yes' }
       ]
     },
-    { id: 5, name: 'Molly',  owner: 'Eve',     type: 'dog',  status: 'New' },
-    { id: 6, name: 'Lucy',   owner: 'Frank',   type: 'bird', status: 'Removed' },
+    { id: 5, name: 'Molly', owner: 'Eve', type: 'dog', status: 'New' },
+    { id: 6, name: 'Lucy', owner: 'Frank', type: 'bird', status: 'Removed' },
     {
       id: 7,
       name: 'Buddy',
@@ -66,13 +70,16 @@ export class FileComparisonDemoComponent {
       type: 'dog',
       status: 'Changed',
       changedAttributes: [
-        { attribute: 'Name',  oldValue: 'Bud',    newValue: 'Buddy' },
-        { attribute: 'Owner', oldValue: 'Henry',  newValue: 'Helen' }
+        { attribute: 'Name', oldValue: 'Bud', newValue: 'Buddy' },
+        { attribute: 'Owner', oldValue: 'Henry', newValue: 'Helen' },
+        { attribute: 'Breed', oldValue: 'Unknown', newValue: 'Retriever' },
+        { attribute: 'Color', oldValue: 'Golden', newValue: 'Tan' },
+        { attribute: 'Vaccinated', oldValue: 'No', newValue: 'Yes' }
       ]
     },
-    { id: 8, name: 'Daisy',  owner: 'Irene',   type: 'cat',  status: 'New' },
-    { id: 9, name: 'Rocky',  owner: 'Jake',    type: 'dog',  status: 'Removed' },
-    { id: 10, name: 'Tweety', owner: 'Laura',  type: 'bird', status: 'New' }
+    { id: 8, name: 'Daisy', owner: 'Irene', type: 'cat', status: 'New' },
+    { id: 9, name: 'Rocky', owner: 'Jake', type: 'dog', status: 'Removed' },
+    { id: 10, name: 'Tweety', owner: 'Laura', type: 'bird', status: 'New' }
   ];
 
   toggleRowExpansion(entry: PetEntry): void {

@@ -1,8 +1,8 @@
 <div class="container">
   <h1>File Comparison Demo: Veterinarian Pet Updates</h1>
-  <p>
-    This table represents changes in our pet database. Rows can be
-    <strong>New</strong>, <strong>Changed</strong>, or <strong>Removed</strong>.
+  <p class="p-01">
+    This table represents changes in a pet database when compared to a CSV file.
+    <br />
     Expand changed rows to see updated attributes.
   </p>
 
@@ -46,40 +46,42 @@
     <tbody>
       <ng-container *ngFor="let pet of petEntries">
         <tr [ngClass]="pet.status.toLowerCase()" (click)="toggleRowExpansion(pet)">
-          <td data-label="ID">{{ pet.id }}</td>
-          <td data-label="Name">{{ pet.name }}</td>
-          <td data-label="Owner">{{ pet.owner }}</td>
-          <td data-label="Type">{{ pet.type }}</td>
+          <td data-label="ID" class="comparison-table-row">{{ pet.id }}</td>
+          <td data-label="Name" class="comparison-table-row">{{ pet.name }}</td>
+          <td data-label="Owner" class="comparison-table-row">{{ pet.owner }}</td>
+          <td data-label="Type" class="comparison-table-row">{{ pet.type }}</td>
 
-          <td data-label="Status" class="status-cell">
+          <td data-label="Status" class="status-cell comparison-table-row">
             <i *ngIf="pet.status === 'New'" class="mdi mdi-plus-circle status-icon new-icon" [attr.title]="pet.status" aria-hidden="true"></i>
             <i *ngIf="pet.status === 'Changed'" class="mdi mdi-pencil-circle status-icon changed-icon" [attr.title]="pet.status" aria-hidden="true"></i>
             <i *ngIf="pet.status === 'Removed'" class="mdi mdi-delete-circle status-icon removed-icon" [attr.title]="pet.status" aria-hidden="true"></i>
           </td>
 
-          <td class="chevron-cell">
+          <td class="chevron-cell comparison-table-row">
             <i *ngIf="pet.status === 'Changed'" class="mdi" [ngClass]="pet.expanded ? 'mdi-chevron-down' : 'mdi-chevron-right'" aria-hidden="true"></i>
           </td>
         </tr>
 
-        <tr [@expandCollapse]="pet.expanded ? 'expanded' : 'collapsed'" class="details-row" [attr.id]="'details-' + pet.id" aria-live="polite">
-          <td colspan="6">
-            <table class="details-table">
-              <thead>
-                <tr>
-                  <th>Attribute</th>
-                  <th>From</th>
-                  <th>To</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let attr of pet.changedAttributes">
-                  <td>{{ attr.attribute }}</td>
-                  <td class="old-value">{{ attr.oldValue }}</td>
-                  <td class="new-value">{{ attr.newValue }}</td>
-                </tr>
-              </tbody>
-            </table>
+        <tr class="details-row" aria-live="polite">
+          <td colspan="6" class="expanded-cell">
+            <div [@expandCollapse]="pet.expanded ? 'expanded' : 'collapsed'" class="details-content">
+              <table class="details-table">
+                <thead>
+                  <tr>
+                    <th>Attribute</th>
+                    <th>From</th>
+                    <th>To</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let attr of pet.changedAttributes">
+                    <td>{{ attr.attribute }}</td>
+                    <td class="old-value">{{ attr.oldValue }}</td>
+                    <td class="new-value">{{ attr.newValue }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </td>
         </tr>
       </ng-container>
