@@ -17,12 +17,12 @@ h1 {
   text-align: left;
 }
 
-.comparison-table th {
+.comparison-table-header {
   cursor: pointer;
   min-width: 7vw;
 }
 
-.comparison-table th:hover {
+.comparison-table-header:hover {
   background-color: #a7a7a7;
 }
 
@@ -129,7 +129,7 @@ tr.removed {
 .details-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  margin: -10px 0;
 }
 
 .details-table th, .details-table td {

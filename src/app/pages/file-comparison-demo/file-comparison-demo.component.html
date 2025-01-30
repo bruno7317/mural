@@ -9,31 +9,31 @@
   <table class="comparison-table">
     <thead>
       <tr>
-        <th (click)="sortPetsBy('id', $event)">
+        <th (click)="sortPetsBy('id', $event)" class="comparison-table-header">
           ID
           <span *ngIf="sortColumn === 'id'">
             <i class="mdi" [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'"></i>
           </span>
         </th>
-        <th (click)="sortPetsBy('name', $event)">
+        <th (click)="sortPetsBy('name', $event)" class="comparison-table-header">
           Pet Name
           <span *ngIf="sortColumn === 'name'">
             <i class="mdi" [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'"></i>
           </span>
         </th>
-        <th (click)="sortPetsBy('owner', $event)">
+        <th (click)="sortPetsBy('owner', $event)" class="comparison-table-header">
           Owner
           <span *ngIf="sortColumn === 'owner'">
             <i class="mdi" [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'"></i>
           </span>
         </th>
-        <th (click)="sortPetsBy('type', $event)">
+        <th (click)="sortPetsBy('type', $event)" class="comparison-table-header">
           Type
           <span *ngIf="sortColumn === 'type'">
             <i class="mdi" [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'"></i>
           </span>
         </th>
-        <th (click)="sortPetsBy('status', $event)">
+        <th (click)="sortPetsBy('status', $event)" class="comparison-table-header">
           Status
           <span *ngIf="sortColumn === 'status'">
             <i class="mdi" [ngClass]="sortDirection === 'asc' ? 'mdi-chevron-up' : 'mdi-chevron-down'"></i>
