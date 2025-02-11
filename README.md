@@ -1,27 +1,55 @@
-# Mural
+## About This Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.1.
+This website serves as a digital portfolio to highlight my development skills, past projects, and professional background. It is designed with a focus on performance, scalability, and maintainability, ensuring an optimal user experience.
 
-## Development server
+## Tech Stack
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Frontend:** Angular 17.1.1
+- **Styling:** CSS
+- **Build Tooling:** Angular CLI
 
-## Code scaffolding
+## Viewing the Portfolio
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The portfolio is hosted online for easy access. You can explore it at:
 
-## Build
+[desousi.com](https://desousi.com)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+If you are interested in the code structure or technical implementation, feel free to browse the repository and its documentation.
 
-## Running unit tests
+### Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (Recommended version: LTS)
+- [Angular CLI](https://angular.io/cli) (Installed globally: `npm install -g @angular/cli`)
 
-## Running end-to-end tests
+### Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Clone the repository and install dependencies:
 
-## Further help
+```sh
+git clone https://github.com/yourusername/mural.git
+cd mural
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Development Server
+
+Start the development server:
+
+```sh
+ng serve
+```
+
+Navigate to `http://localhost:4200/`. The application will automatically reload if you modify any source files.
+
+## Contact
+
+I am actively seeking new opportunities where I can contribute and grow. Feel free to reach out:
+
+- **Website:** [desousi.com](https://desousi.com)
+- **LinkedIn:** [https://www.linkedin.com/in/bruno-silva-60806135/](https://www.linkedin.com/in/bruno-silva-60806135/)
+- **Email:** bruno7317@gmail.com
+
+---
+
+*Built with passion, technology, and creativity.*
