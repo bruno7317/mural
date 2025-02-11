@@ -36,17 +36,6 @@ export interface Project {
 export class ProjectService {
   private projects: Project[] = [
     {
-      id: '',
-      title: 'My Work',
-      imageUrl: 'assets/images/my-work.png',
-      detailImageUrl: '',
-      description: '',
-      objective: '',
-      challenges: '',
-      results: '',
-      tags: []
-    },
-    {
       id: 'project-4',
       title: 'Innovative File Comparison',
       imageUrl: 'assets/images/tag-safety.png',

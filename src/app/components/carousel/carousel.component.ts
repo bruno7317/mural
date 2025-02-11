@@ -7,9 +7,10 @@ import { Router } from '@angular/router';
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css'],
 })
-export class CarouselComponent implements OnInit {
+export class CarouselComponent implements OnInit, OnDestroy {
   projects: Project[] = [];
   currentSlide = 0;
+  intervalId: any;
 
   private touchStartX: number = 0;
   private touchEndX: number = 0;
@@ -19,17 +20,41 @@ export class CarouselComponent implements OnInit {
 
   ngOnInit(): void {
     this.projects = this.projectService.getProjects();
+    this.startAutoSlide();
+  }
+
+  ngOnDestroy(): void {
+    this.clearAutoSlide();
+  }
+
+  startAutoSlide(): void {
+    this.clearAutoSlide();
+    this.intervalId = setInterval(() => {
+      this.nextSlide();
+    }, 5000);
+  }
+
+  clearAutoSlide(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+
+  resetTimer(): void {
+    this.startAutoSlide();
   }
 
   previousSlide(): void {
     this.currentSlide =
       this.currentSlide === 0 ? this.projects.length - 1 : this.currentSlide - 1;
+    this.resetTimer();
     this.updateSlidePosition();
   }
 
   nextSlide(): void {
     this.currentSlide =
       this.currentSlide === this.projects.length - 1 ? 0 : this.currentSlide + 1;
+    this.resetTimer();
     this.updateSlidePosition();
   }
 

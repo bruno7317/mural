@@ -90,7 +90,7 @@
   position: relative;
   z-index: 2;
   background: var(--cinza-600);
-  height: 800px;
+  height: auto;
 }
 
 @media (max-width: 768px) {
@@ -144,9 +144,5 @@
 
   .intro__pitch {
     width: auto;
-  }
-
-  .home__background {
-    height: auto;
   }
 }
