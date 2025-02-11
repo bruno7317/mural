@@ -3,6 +3,10 @@
   justify-content: center;
 }
 
+.highlights-title {
+  text-align: center;
+}
+
 .project-cards {
   display: flex;
   gap: 30px;
